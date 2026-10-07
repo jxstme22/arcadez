@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-10-07T13:59:40.753Z",
+  "layers": {
+    "accessible_btc_seconds": 3786,
+    "price_points_60s": 3137,
+    "price_points_1s": 661,
+    "rounds_discovered": 2395,
+    "rounds_existence_verified": 2395,
+    "rounds_onchain_spot_verified": 2,
+    "labelled_rounds_up_down": 2390,
+    "up": 1156,
+    "down": 1234,
+    "void": 5,
+    "gap_minutes_404": 1356,
+    "venue_404_responses": 1357,
+    "full_context_300s_grid": 1903,
+    "full_context_600s_grid": 1902,
+    "full_context_300s_exact": 7,
+    "full_context_600s_exact": 2,
+    "context_rows_built": 2390,
+    "rounds_with_pool_history": 1809,
+    "pool_observations": 1809,
+    "span_first": "2026-10-04T22:43:00.000Z",
+    "span_last": "2026-10-07T13:13:00.000Z",
+    "span_minutes": 3751
+  },
+  "http_status_mix": [
+    {
+      "kind": "price60",
+      "st": "200",
+      "n": 2100
+    },
+    {
+      "kind": "round",
+      "st": "200",
+      "n": 2114
+    },
+    {
+      "kind": "round",
+      "st": "404",
+      "n": 1357
+    }
+  ],
+  "dataset_class": "DISCOVERY_ELIGIBLE",
+  "note": "Grid=minute-mark presence (+-90s snap). Exact=every second present. Size class describes dataset size only, not predictive quality."
+}

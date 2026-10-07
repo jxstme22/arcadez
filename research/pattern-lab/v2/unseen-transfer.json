@@ -1,0 +1,13 @@
+{
+  "n": 389,
+  "baseUP": 0.4781,
+  "regime": {
+    "acted": 0,
+    "acc": null
+  },
+  "knn": {
+    "scored": 154,
+    "acted": 89,
+    "acc": 0.4831
+  }
+}

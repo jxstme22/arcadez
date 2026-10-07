@@ -1,0 +1,38 @@
+{
+  "checkpoint_created_at": "2026-10-07T13:47:08.477Z",
+  "method": "VACUUM INTO from ./var/history/arcade.sqlite (readOnly open; source unmutated, session B untouched)",
+  "source_rounds": 2309,
+  "labelled_UP_DOWN": 2298,
+  "void": 4,
+  "byResult": [
+    {
+      "result": "DOWN",
+      "c": 1191
+    },
+    {
+      "result": "UP",
+      "c": 1114
+    },
+    {
+      "result": "VOID",
+      "c": 4
+    }
+  ],
+  "byProvenance": [
+    {
+      "provenance": "VENUE_RECORDED",
+      "c": 2305
+    },
+    {
+      "provenance": "VENUE_RECORDED_VOID",
+      "c": 4
+    }
+  ],
+  "earliest": "2026-10-05T02:49:00.000Z",
+  "latest": "2026-10-07T13:13:00.000Z",
+  "prices": 2716,
+  "pools": "in raw JSON per round (post-settlement provenance)",
+  "tradeBars": 0,
+  "sha256": "c1a0771a9fa43264e351941a1004aa19d0fee50df62a5dca72c43d78ea4002c5",
+  "gate_1000": "PASS"
+}

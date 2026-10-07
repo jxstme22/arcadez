@@ -1,0 +1,20 @@
+[Unit]
+Description=Arcade Pattern Nodes live runtime (T-7 paper, settle, nodes)
+After=network-online.target arcade-live.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/live
+Environment=NODES_LIVE_DIR=/data/arcade/pattern/nodes
+Environment=LIVE_EXTERNAL=1
+ExecStart=/usr/bin/node scripts/pattern-live.mjs
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/data/arcade/logs/pattern.log
+StandardError=append:/data/arcade/logs/pattern.log
+
+[Install]
+WantedBy=multi-user.target

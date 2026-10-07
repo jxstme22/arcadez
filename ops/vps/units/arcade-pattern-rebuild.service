@@ -1,0 +1,12 @@
+[Unit]
+Description=Arcade pattern slow-rebuild gate (milestone-gated, no auto-promotion)
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/live
+Environment=NODES_LIVE_DIR=/data/arcade/pattern/nodes
+ExecStart=/usr/bin/node scripts/pattern-rebuild.mjs
+StandardOutput=append:/data/arcade/logs/rebuild.log
+StandardError=append:/data/arcade/logs/rebuild.log

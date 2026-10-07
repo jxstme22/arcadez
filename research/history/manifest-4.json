@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-10-07T09:03:53.986Z",
+  "window": {
+    "from": "2026-10-06T19:54:01.865Z",
+    "to": "2026-10-06T21:54:01.865Z"
+  },
+  "rounds": {
+    "ok": 115,
+    "missing": 5,
+    "missingSample": [
+      1791318240,
+      1791318300,
+      1791319800,
+      1791320760,
+      1791322080
+    ],
+    "provenance": "VENUE_RECORDED",
+    "note": "Labels from venue open/close micro + outcome; no invented rounds."
+  },
+  "prices": {
+    "attempted": 120,
+    "ok": 120,
+    "failed": 0,
+    "errors": [],
+    "provenance": "HISTORICAL_BACKFILL_NEVER_LIVE",
+    "note": "Round labels are not derived from this table."
+  },
+  "totals": "see `npm run harvest:status` (store is source of truth across passes)"
+}

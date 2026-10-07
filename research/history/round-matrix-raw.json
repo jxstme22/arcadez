@@ -1,0 +1,241 @@
+{
+  "probedAt": "2026-10-07T08:21:32.449Z",
+  "rows": [
+    {
+      "name": "timeline_baseline",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC&before=5&after=1",
+      "status": 200,
+      "ok": true,
+      "sha": "69687075a35b065dfde66976e84da7cc66a6c4f45a39e11e3ab4ee91680223f0",
+      "len": 2764,
+      "summary": {
+        "n": 7,
+        "first": "btc-1791360900",
+        "last": "btc-1791361260",
+        "serverTime": 1791361258
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "timeline_max",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC&before=20&after=20",
+      "status": 200,
+      "ok": true,
+      "sha": "7ce5d1b2574a2c714b89cce387e4d95b9c1e6bc7469a8641c30a52f673e9bee6",
+      "len": 15152,
+      "summary": {
+        "n": 41,
+        "first": "btc-1791360060",
+        "last": "btc-1791362460",
+        "serverTime": 1791361260
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "timeline_zero",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC&before=0&after=0",
+      "status": 200,
+      "ok": true,
+      "sha": "9cd62204348a4d19ed5225b3726deed11252431e4255921fed49a61fd8d0218a",
+      "len": 413,
+      "summary": {
+        "n": 1,
+        "first": "btc-1791361260",
+        "last": "btc-1791361260",
+        "serverTime": 1791361263
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "timeline_defaults",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC",
+      "status": 200,
+      "ok": true,
+      "sha": "ee7a5211d47aa5e7be63ea884426b187f41ae0f00cd3c4da4ef79735f9f583ff",
+      "len": 4095,
+      "summary": {
+        "n": 11,
+        "first": "btc-1791360960",
+        "last": "btc-1791361560",
+        "serverTime": 1791361265
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "timeline_no_asset",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds",
+      "status": 400,
+      "ok": false,
+      "sha": "8ef2d4e5f6f9791e5c34cdd04327fa9cf80c573fc79087ce208f219473b5cde4",
+      "len": 183,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": "{\"type\":\"invalid_request_error\",\"message\":\"Invalid option: expected one of \\\"BTC\\\"|\\\"SOL\\\"\",\"code\":\"invalid_value\",\"param\":\"asset\",\"request_id\":\"eda370c7-0257-4b0d-a2ea-087466362ab7\"}",
+      "single": null
+    },
+    {
+      "name": "timeline_overmax",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC&before=21&after=1",
+      "status": 400,
+      "ok": false,
+      "sha": "6217e6536f03d24f3babe783fc2d9887f5a1397d68c9fb3fe2e4d4d693593ae9",
+      "len": 166,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": "{\"type\":\"invalid_request_error\",\"message\":\"Too big: expected number to be <=20\",\"code\":\"too_big\",\"param\":\"before\",\"request_id\":\"b831156b-8d63-4da6-8bd3-045f0008d765\"}",
+      "single": null
+    },
+    {
+      "name": "timeline_cursor_guess",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds?asset=BTC&before=5&after=1&cursor=1791345660",
+      "status": 200,
+      "ok": true,
+      "sha": "9cad77b5b42cceee4535ded780d1a4989effb069232e5c887f3eee939d656633",
+      "len": 2763,
+      "summary": {
+        "n": 7,
+        "first": "btc-1791360960",
+        "last": "btc-1791361320",
+        "serverTime": 1791361273
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "current",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/current",
+      "status": 200,
+      "ok": true,
+      "sha": "2c66c08108eabf3a656aeb4b34570243554765906ad06b5d6d351019e998ed98",
+      "len": 1537,
+      "summary": {
+        "n": 2,
+        "first": "btc-1791361260",
+        "last": "sol-1791361260",
+        "serverTime": 1791361275
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "config",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/config",
+      "status": 200,
+      "ok": true,
+      "sha": "cdaaecea3562efbf455607ca2f0c90baaa2729e9f03b4c465b40723b944d5b06",
+      "len": 399,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": null,
+      "single": null
+    },
+    {
+      "name": "single_recent_settled",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791360000",
+      "status": 200,
+      "ok": true,
+      "sha": "68178263c2ca964c069f3cf34bd9378f9862d1549c7ea1d640b054479f5eff73",
+      "len": 400,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": null,
+      "single": {
+        "id": "btc-1791360000",
+        "status": "settled",
+        "outcome": "DOWN"
+      }
+    },
+    {
+      "name": "single_future",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791361260",
+      "status": 200,
+      "ok": true,
+      "sha": "02d3fa80abd4bb01553702723f28f5b17109d3c84d0f1b364f017bd5dda2c65b",
+      "len": 378,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": null,
+      "single": {
+        "id": "btc-1791361260",
+        "status": "live",
+        "outcome": "UNRESOLVED"
+      }
+    },
+    {
+      "name": "single_old_floor",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1790364060",
+      "status": 200,
+      "ok": true,
+      "sha": "1d691380dd616c13a5864d3ab656ed10773bdd05c7fb6aa7145208a64f332b6a",
+      "len": 396,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": null,
+      "single": {
+        "id": "btc-1790364060",
+        "status": "settled",
+        "outcome": "UP"
+      }
+    },
+    {
+      "name": "single_below_floor",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1790361720",
+      "status": 404,
+      "ok": false,
+      "sha": "221e3b57b14180f9f409e01510c9cfc4ab63e5aaa87c914c030e210f77ded9c1",
+      "len": 137,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": "{\"type\":\"invalid_request_error\",\"message\":\"round not found\",\"code\":\"round_not_found\",\"request_id\":\"468f64b7-71e6-4a90-baf5-1b20e8c346aa\"}",
+      "single": null
+    },
+    {
+      "name": "single_offgrid",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791360030",
+      "status": 400,
+      "ok": false,
+      "sha": "ba63ebe4ffa7c9d19dbd18a5bff3d214ef03c4369180872d4d4b4da4647ca9c0",
+      "len": 184,
+      "summary": {
+        "n": 0,
+        "first": null,
+        "last": null,
+        "serverTime": null
+      },
+      "err": "{\"type\":\"invalid_request_error\",\"message\":\"openTs must be a positive safe integer divisible by 60\",\"code\":\"custom\",\"param\":\"openTs\",\"request_id\":\"e8a1a2f4-332d-43f5-872a-9b02223e26ef\"}",
+      "single": null
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "arm": "openai",
+    "status": "OK",
+    "answer": {
+      "model": "gpt-6-luna",
+      "answers": [
+        {
+          "type": "predicate",
+          "name": "next_btc_arcade_up",
+          "probability": 0.5
+        }
+      ],
+      "usage": {
+        "input_tokens": 469,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 469
+      }
+    },
+    "usage": {
+      "input_tokens": 469,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 469
+    }
+  },
+  {
+    "arm": "jev",
+    "status": "OK",
+    "answer": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "next_btc_arcade_up": {
+          "type": "noul",
+          "noul": 0.5
+        }
+      },
+      "usage": {
+        "input_tokens": 742,
+        "output_tokens": 25
+      }
+    },
+    "usage": {
+      "input_tokens": 742,
+      "output_tokens": 25
+    }
+  },
+  {
+    "arm": "glide",
+    "status": "OK",
+    "answer": {
+      "model": "glide",
+      "answers": {
+        "next_btc_arcade_up": {
+          "type": "noul",
+          "noul": 0.7431679972357831,
+          "confidence": 0.48633599447156617
+        }
+      },
+      "usage": {
+        "input_tokens": 442,
+        "output_tokens": 1
+      },
+      "token_usage": 443
+    },
+    "usage": {
+      "input_tokens": 442,
+      "output_tokens": 1
+    }
+  }
+]

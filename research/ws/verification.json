@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-07T04:22:46.264Z",
+  "durationMs": 620021,
+  "state": "LIVE",
+  "frames": 981,
+  "validTicks": 589,
+  "duplicates": 400,
+  "malformed": 346,
+  "gaps": 0,
+  "maxGapMs": 0,
+  "reconnects": 1,
+  "lastTickAgeMs": 743,
+  "iarP50": 951,
+  "iarP90": 1664,
+  "iarP99": 2689,
+  "solOnlyFrames": 0,
+  "gate": {
+    "minMinutes": 10,
+    "minFrames": 300
+  },
+  "pass": true
+}

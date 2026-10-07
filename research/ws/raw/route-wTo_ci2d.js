@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime--c01j_DQ.js";import{Oz as t,Rz as n}from"./vendor-tanstack-runtime-BGcYqU3f.js";var r;e((()=>{t(),r=n}))();export{r as component};

@@ -1,0 +1,461 @@
+{
+  "version": "history-v1-20261007",
+  "thresholdsHash": "c3548e01d549d3b774540c968d2d5c9e43db6013fda0fdfe829853479bbd5dd7",
+  "thresholds": {
+    "momLo": -0.2902,
+    "momHi": 2.2056,
+    "volLo": 2.0897,
+    "volHi": 3.1963
+  },
+  "hypothesesTested": {
+    "gridsConsidered": [
+      "H-18-quantile"
+    ],
+    "regimesScored": 18,
+    "note": "ONE grid pre-registered; 8/16/24/32/64 sweep explicitly NOT run (n=114 too small)"
+  },
+  "splits": {
+    "train": 72,
+    "validation": 24,
+    "test": 24,
+    "skipped": 0
+  },
+  "train": [
+    {
+      "regime": "H-up-high-smooth",
+      "n": 8,
+      "up": 5,
+      "upRate": 0.625,
+      "ci95": [
+        0.3057,
+        0.8632
+      ]
+    },
+    {
+      "regime": "H-down-low-smooth",
+      "n": 7,
+      "up": 1,
+      "upRate": 0.1429,
+      "ci95": [
+        0.0257,
+        0.5131
+      ]
+    },
+    {
+      "regime": "H-flat-low-smooth",
+      "n": 7,
+      "up": 4,
+      "upRate": 0.5714,
+      "ci95": [
+        0.2505,
+        0.8418
+      ]
+    },
+    {
+      "regime": "H-down-high-smooth",
+      "n": 6,
+      "up": 3,
+      "upRate": 0.5,
+      "ci95": [
+        0.1876,
+        0.8124
+      ]
+    },
+    {
+      "regime": "H-down-med-choppy",
+      "n": 6,
+      "up": 4,
+      "upRate": 0.6667,
+      "ci95": [
+        0.3,
+        0.9032
+      ]
+    },
+    {
+      "regime": "H-up-med-choppy",
+      "n": 5,
+      "up": 3,
+      "upRate": 0.6,
+      "ci95": [
+        0.2307,
+        0.8824
+      ]
+    },
+    {
+      "regime": "H-flat-med-smooth",
+      "n": 5,
+      "up": 3,
+      "upRate": 0.6,
+      "ci95": [
+        0.2307,
+        0.8824
+      ]
+    },
+    {
+      "regime": "H-flat-high-choppy",
+      "n": 4,
+      "up": 4,
+      "upRate": 1,
+      "ci95": [
+        0.5101,
+        1
+      ]
+    },
+    {
+      "regime": "H-flat-med-choppy",
+      "n": 3,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.5615
+      ]
+    },
+    {
+      "regime": "H-up-low-choppy",
+      "n": 3,
+      "up": 1,
+      "upRate": 0.3333,
+      "ci95": [
+        0.0615,
+        0.7923
+      ]
+    },
+    {
+      "regime": "H-flat-high-smooth",
+      "n": 3,
+      "up": 2,
+      "upRate": 0.6667,
+      "ci95": [
+        0.2077,
+        0.9385
+      ]
+    },
+    {
+      "regime": "H-down-med-smooth",
+      "n": 3,
+      "up": 1,
+      "upRate": 0.3333,
+      "ci95": [
+        0.0615,
+        0.7923
+      ]
+    },
+    {
+      "regime": "H-up-med-smooth",
+      "n": 3,
+      "up": 2,
+      "upRate": 0.6667,
+      "ci95": [
+        0.2077,
+        0.9385
+      ]
+    },
+    {
+      "regime": "H-flat-low-choppy",
+      "n": 3,
+      "up": 2,
+      "upRate": 0.6667,
+      "ci95": [
+        0.2077,
+        0.9385
+      ]
+    },
+    {
+      "regime": "H-up-high-choppy",
+      "n": 2,
+      "up": 2,
+      "upRate": 1,
+      "ci95": [
+        0.3424,
+        1
+      ]
+    },
+    {
+      "regime": "H-up-low-smooth",
+      "n": 2,
+      "up": 2,
+      "upRate": 1,
+      "ci95": [
+        0.3424,
+        1
+      ]
+    },
+    {
+      "regime": "H-down-low-choppy",
+      "n": 2,
+      "up": 1,
+      "upRate": 0.5,
+      "ci95": [
+        0.0945,
+        0.9055
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "regime": "H-flat-med-smooth",
+      "n": 5,
+      "up": 2,
+      "upRate": 0.4,
+      "ci95": [
+        0.1176,
+        0.7693
+      ]
+    },
+    {
+      "regime": "H-down-low-choppy",
+      "n": 3,
+      "up": 2,
+      "upRate": 0.6667,
+      "ci95": [
+        0.2077,
+        0.9385
+      ]
+    },
+    {
+      "regime": "H-down-low-smooth",
+      "n": 3,
+      "up": 2,
+      "upRate": 0.6667,
+      "ci95": [
+        0.2077,
+        0.9385
+      ]
+    },
+    {
+      "regime": "H-up-med-smooth",
+      "n": 2,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.6576
+      ]
+    },
+    {
+      "regime": "H-flat-low-smooth",
+      "n": 2,
+      "up": 1,
+      "upRate": 0.5,
+      "ci95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    {
+      "regime": "H-down-high-choppy",
+      "n": 2,
+      "up": 1,
+      "upRate": 0.5,
+      "ci95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    {
+      "regime": "H-up-low-smooth",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-flat-low-choppy",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    },
+    {
+      "regime": "H-down-high-smooth",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    },
+    {
+      "regime": "H-down-med-smooth",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-flat-med-choppy",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    },
+    {
+      "regime": "H-down-med-choppy",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-up-low-choppy",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    }
+  ],
+  "test": [
+    {
+      "regime": "H-down-high-choppy",
+      "n": 5,
+      "up": 4,
+      "upRate": 0.8,
+      "ci95": [
+        0.3755,
+        0.9638
+      ]
+    },
+    {
+      "regime": "H-down-med-choppy",
+      "n": 4,
+      "up": 1,
+      "upRate": 0.25,
+      "ci95": [
+        0.0456,
+        0.6994
+      ]
+    },
+    {
+      "regime": "H-up-high-choppy",
+      "n": 2,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.6576
+      ]
+    },
+    {
+      "regime": "H-up-med-choppy",
+      "n": 2,
+      "up": 1,
+      "upRate": 0.5,
+      "ci95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    {
+      "regime": "H-flat-med-choppy",
+      "n": 2,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.6576
+      ]
+    },
+    {
+      "regime": "H-flat-high-choppy",
+      "n": 2,
+      "up": 1,
+      "upRate": 0.5,
+      "ci95": [
+        0.0945,
+        0.9055
+      ]
+    },
+    {
+      "regime": "H-down-med-smooth",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-flat-high-smooth",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    },
+    {
+      "regime": "H-down-low-choppy",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-flat-med-smooth",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-up-med-smooth",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    },
+    {
+      "regime": "H-down-high-smooth",
+      "n": 1,
+      "up": 1,
+      "upRate": 1,
+      "ci95": [
+        0.2065,
+        1
+      ]
+    },
+    {
+      "regime": "H-up-low-choppy",
+      "n": 1,
+      "up": 0,
+      "upRate": 0,
+      "ci95": [
+        0,
+        0.7935
+      ]
+    }
+  ],
+  "verdict": "DESCRIPTIVE_ONLY — test split n~22; no edge claimed; min-support gate (n>=10) applied below",
+  "gatedTest": []
+}

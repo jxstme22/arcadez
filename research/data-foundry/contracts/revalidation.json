@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-07T08:12:51.734Z",
+  "endpoints": {
+    "openapi": {
+      "ok": true,
+      "bytes": 207182,
+      "sha": "1d19a16b67fd337f",
+      "sample": "{\"openapi\":\"3.0.0\",\"info\":{\"title\":\"Prediction Market API\",\"version\":\"v1\"},\"tags\":[{\"name\":\"Events\"},{\"name\":\"Markets\"},{\"name\":\"Execution\"},{\"name\":\"Orders\"},{\"name\":\"Parlays\"},{\"name\":\"Tickets\"},{\"name\":\"Positions\"},{\"name\":\"PositionsV2\"},{\"name\":\"History\"},{\"name\":\"HistoryV2\"},{\"name\":\"Trading\"},{\"name\":\"Copy Trading\"},{\"name\":\"Orderbook\"},{\"name\":\"Milestones\"},{\"name\":\"Vault\"},{\"name\":\"Comments\"},{\"name\":\"Play\"},{\"name\":\"Clans\"},{\"name\":\"Clan Competitions\"},{\"name\":\"Internal\"}],\"components\":{\"schemas\":{\"PredictionMarketCommentReply\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"for"
+    },
+    "config": {
+      "ok": true,
+      "bytes": 399,
+      "sha": "cdaaecea3562efbf",
+      "sample": "{\"programId\":\"2DeGBCAiEJd1MgMuPGDKh7svBikZa9izbnTn5p7ESzPt\",\"settlementMint\":\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\",\"settlementDecimals\":6,\"assets\":[\"BTC\",\"SOL\"],\"roundDurationSeconds\":60,\"betCutoffSeconds\":5,\"clientDisableBufferSeconds\":0,\"feeBps\":100,\"paused\":false,\"limits\":{\"minimum\":\"1000000\",\"maximumPerEntry\":\"1000000000\",\"maximumPerWallet\":\"5000000000\",\"maximumPool\":\"100000000000\"}}"
+    },
+    "current": {
+      "ok": true,
+      "bytes": 804,
+      "sha": "8d4d2a12381fb78f",
+      "sample": "{\"serverTime\":1791360777,\"live\":[{\"id\":\"btc-1791360720\",\"address\":\"5ChZyevyoMTQ4RxxiAcisFarKc83pwVMfaufSr4eHgXo\",\"asset\":\"BTC\",\"openTs\":1791360720,\"closeTs\":1791360780,\"claimDeadlineTs\":null,\"status\":\"live\",\"outcome\":\"UNRESOLVED\",\"upPool\":\"61250000\",\"downPool\":\"63810000\",\"feeAmount\":\"0\",\"remainingPayout\":\"0\",\"openPrice\":\"84022212752\",\"closePrice\":null,\"openObservationTs\":1791360720,\"closeObservationTs\":null},{\"id\":\"sol-1791360720\",\"address\":\"J1qxv7DRKpp4YYRhUC68pAmJwnvjQxMLSj4JQmKBoaGo\",\"asset\":\"SOL\",\"openTs\":1791360720,\"closeTs\":1791360780,\"claimDeadlineTs\":null,\"status\":\"live\",\"outcome\":\"UNR"
+    },
+    "timeline": {
+      "ok": true,
+      "bytes": 1536,
+      "sha": "c6c05775dfc9359e",
+      "sample": "{\"data\":[{\"id\":\"btc-1791360660\",\"address\":\"pCQuRRfGZqot97YDFFE1HWCFNC6DoEBvKukodpkHeWo\",\"asset\":\"BTC\",\"openTs\":1791360660,\"closeTs\":1791360720,\"claimDeadlineTs\":1791447121,\"status\":\"settled\",\"outcome\":\"DOWN\",\"upPool\":\"32000000\",\"downPool\":\"32000000\",\"feeAmount\":\"0\",\"remainingPayout\":\"0\",\"openPrice\":\"84023876610\",\"closePrice\":\"84022212752\",\"openObservationTs\":1791360660,\"closeObservationTs\":1791360720},{\"id\":\"btc-1791360720\",\"address\":\"5ChZyevyoMTQ4RxxiAcisFarKc83pwVMfaufSr4eHgXo\",\"asset\":\"BTC\",\"openTs\":1791360720,\"closeTs\":1791360780,\"claimDeadlineTs\":null,\"status\":\"resolving\",\"outcome\":\"UNRES"
+    },
+    "price_now": {
+      "ok": true,
+      "bytes": 72,
+      "sha": "73cb6fd705f1528a",
+      "sample": "{\"symbol\":\"btcusdt\",\"timestamp\":1791360723000,\"value\":84021.87566577554}"
+    },
+    "candles_default": {
+      "ok": false,
+      "error": "JUPITER_HTTP_400"
+    }
+  }
+}

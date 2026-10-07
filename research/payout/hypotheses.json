@@ -1,0 +1,30 @@
+{
+  "registeredAt": "2026-10-07T04:51:14.703Z",
+  "n": 56,
+  "hypotheses": [
+    {
+      "id": "H1",
+      "formula": "feeAmount == 1% of total pool",
+      "verdict": "FALSIFIED",
+      "evidence": "0/56 exact; range 0-0.236%"
+    },
+    {
+      "id": "H2",
+      "formula": "feeAmount == 1% of loser pool (= total winner profit)",
+      "verdict": "FALSIFIED",
+      "evidence": "0/56 exact"
+    },
+    {
+      "id": "H3",
+      "formula": "feeAmount is cumulative/unclaimed accrual, not per-round fee",
+      "verdict": "UNTESTED (needs claim/account history)",
+      "evidence": "corr(fee,total)=0.346; 15/56 zero-fee rounds"
+    },
+    {
+      "id": "H4",
+      "formula": "paper net = stake*total/winner*0.99 (frontend gn/vn, feeBps 100)",
+      "verdict": "REPRODUCED_FRONTEND_OBSERVED",
+      "evidence": "direction match 56/56; display 2dp; on-chain unconfirmed"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+prefix,eligible_n,baseUP,note
+first_500,2,0.5000,eligibility-only; regimes recomputed at full-n only
+first_1000,502,0.4741,eligibility-only; regimes recomputed at full-n only
+first_1677,1179,0.4818,eligibility-only; regimes recomputed at full-n only
+full,2066,,see v2-r scorecard

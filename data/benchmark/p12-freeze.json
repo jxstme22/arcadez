@@ -1,0 +1,49 @@
+{
+  "benchmark": "P12v1",
+  "frozenAt": "2026-10-07T08:31:22.693Z",
+  "featureSchema": {
+    "experiment": "ARCADE_DECISIONS_V0",
+    "version": "0.1.0",
+    "engine": "featuresAsOf (live) — NOT featuresRich (research-only)"
+  },
+  "promptSha": "443fa889d556c42542db1030974112b7ca6df03d654a5f45f542c95e8ec3928f",
+  "models": {
+    "openai": "gpt-6-luna",
+    "jev": "jev-latest",
+    "glide": "fastino/GLiDE"
+  },
+  "thresholds": {
+    "up": 0.57,
+    "down": 0.43,
+    "stake": 10
+  },
+  "timing": {
+    "beforeMs": 10000,
+    "bufferMs": 3000,
+    "venueBetCutoffMs": 5000,
+    "deadlineRule": "start-max(buffer,cutoff+1000)",
+    "maxPriceAgeMs": 2500
+  },
+  "skipPolicy": "stale/missing/late/invalid -> SKIP; VOID excluded from binary scoring",
+  "baselines": [
+    "alwaysUP",
+    "alwaysDOWN",
+    "prevCont",
+    "prevRev",
+    "fifty",
+    "momentum"
+  ],
+  "payout": "NULL_UNVERIFIED",
+  "patternLab": "SHADOW_ONLY",
+  "sourceHashes": {
+    "src/market.mjs": "06919987dd1a46bf77b598f58006a10776ebfd7ebac22c931e55c9fe8cfb6eaf",
+    "src/paper.mjs": "deb5c27e28bb245b4df703f107520cb20fea009ed66aa3f643fbe605a6fc0727",
+    "src/models.mjs": "ce3d6826cbd13a9074f593e80ade8eca2d41a0d88f333dfa73468c3c8f854e31",
+    "src/bench.mjs": "9fe64c8a1d5fae611a2d4d12268090597ce883516d603c80453886d6fd678807",
+    "src/patterns.mjs": "affc6d9e408b8b4888cc372eb0274ffad1493d79c4614f7b3b56a030f380812b",
+    "src/config.mjs": "02ff9f126f162a548e507f3402ab0e7731593ebdc1b9fc524784e4a8769c6109",
+    "src/payout.mjs": "d332b68324f429679f41f4ee95b58efff54a2acad5ca61ba51e7ced79685354a",
+    "src/features.mjs": "32906c445c3ceb9d001b4144426e8bdcc03130b9b128279d8a7d36c4939e8525",
+    "src/history.mjs": "7d9f44e4a4c29d4615efbba021fe34dbce08a371db04cecfe7fbae3cd66ca511"
+  }
+}

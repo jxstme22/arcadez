@@ -1,0 +1,9 @@
+[Unit]
+Description=Arcade pattern rebuild gate daily
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=24h
+
+[Install]
+WantedBy=timers.target

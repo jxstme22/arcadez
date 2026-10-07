@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T08:06:51.954Z",
+  "roundId": "btc-1791360420",
+  "snapshotHash": "0d9614fdf4798ff4aa11e42754a7fdb0ddf33ccda3d2f94f9866796bd12a4eb1",
+  "asOfMs": 1791360408185,
+  "deadlineMs": 1791360414000,
+  "calls": [
+    {
+      "provider": "OPENAI_DECISIONS",
+      "model": "gpt-6-luna",
+      "status": "VALID",
+      "pUp": 0.5,
+      "decision": "SKIP",
+      "latencyMs": 3766,
+      "error": null
+    },
+    {
+      "provider": "JEV",
+      "model": "jev-1.13.0",
+      "status": "VALID",
+      "pUp": 0.5,
+      "decision": "SKIP",
+      "latencyMs": 563,
+      "error": null
+    },
+    {
+      "provider": "GLIDE",
+      "model": "glide",
+      "status": "VALID",
+      "pUp": 0.7431679972357831,
+      "decision": "UP",
+      "latencyMs": 1328,
+      "error": null
+    }
+  ],
+  "settlement": {
+    "outcome": "DOWN",
+    "openMicro": "84037691560",
+    "closeMicro": "84036579403",
+    "correctByProvider": {
+      "OPENAI_DECISIONS": null,
+      "JEV": null,
+      "GLIDE": false
+    },
+    "note": "SKIPs score null; GLiDE UP vs DOWN incorrect"
+  }
+}

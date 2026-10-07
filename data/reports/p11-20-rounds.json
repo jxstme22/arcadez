@@ -1,0 +1,169 @@
+{
+  "label": "P11_LIVE_20",
+  "at": "2026-10-07T08:29:07.649Z",
+  "rounds": [
+    "btc-1791360540",
+    "btc-1791360600",
+    "btc-1791360660",
+    "btc-1791360720",
+    "btc-1791360780",
+    "btc-1791360840",
+    "btc-1791360900",
+    "btc-1791360960",
+    "btc-1791361020",
+    "btc-1791361080",
+    "btc-1791361140",
+    "btc-1791361200",
+    "btc-1791361260",
+    "btc-1791361320",
+    "btc-1791361380",
+    "btc-1791361440",
+    "btc-1791361500",
+    "btc-1791361560",
+    "btc-1791361620",
+    "btc-1791361680"
+  ],
+  "perArm": {
+    "openai": {
+      "eligible": 20,
+      "acted": 0,
+      "skipRate": 1,
+      "up": 0,
+      "down": 0,
+      "wins": 0,
+      "losses": 0,
+      "accuracy": null,
+      "brier": 0.25103,
+      "logloss": null,
+      "latP50": 694,
+      "latP90": 1305,
+      "latP99": 3856,
+      "late": 0,
+      "errors": 0,
+      "spendEstimateUsd": null
+    },
+    "jev": {
+      "eligible": 20,
+      "acted": 0,
+      "skipRate": 1,
+      "up": 0,
+      "down": 0,
+      "wins": 0,
+      "losses": 0,
+      "accuracy": null,
+      "brier": 0.25744999999999996,
+      "logloss": null,
+      "latP50": 581,
+      "latP90": 874,
+      "latP99": 1058,
+      "late": 0,
+      "errors": 0,
+      "spendEstimateUsd": null
+    },
+    "glide": {
+      "eligible": 20,
+      "acted": 16,
+      "skipRate": 0.19999999999999996,
+      "up": 15,
+      "down": 1,
+      "wins": 8,
+      "losses": 8,
+      "accuracy": 0.5,
+      "brier": 0.3174369610517982,
+      "logloss": null,
+      "latP50": 2851,
+      "latP90": 3546,
+      "latP99": 3623,
+      "late": 0,
+      "errors": 0,
+      "spendEstimateUsd": null
+    }
+  },
+  "shadow": [
+    {
+      "roundId": "btc-1791360540",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360600",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360660",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360720",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360780",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360840",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360900",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791360960",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361020",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361080",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361140",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361200",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361260",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361320",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361380",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361440",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361500",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361560",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361620",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361680",
+      "regime": "R-flat-low-choppy"
+    },
+    {
+      "roundId": "btc-1791361740",
+      "regime": "R-flat-low-choppy"
+    }
+  ],
+  "pnlStatus": "NULL_UNVERIFIED_PAYOUT"
+}

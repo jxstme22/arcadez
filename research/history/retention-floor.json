@@ -1,0 +1,133 @@
+{
+  "probedAt": "2026-10-07T08:20:05.942Z",
+  "priceFloor": {
+    "failLo": 1788769081,
+    "okHi": 1788774481,
+    "spanSec": 5400,
+    "failIso": "2026-09-07T08:18:01.000Z",
+    "okIso": "2026-09-07T09:48:01.000Z",
+    "steps": [
+      {
+        "mid": 1789460281,
+        "ok": true,
+        "status": 200,
+        "value": 76700.04582223148
+      },
+      {
+        "mid": 1789114681,
+        "ok": true,
+        "status": 200,
+        "value": 77216.39652779307
+      },
+      {
+        "mid": 1788941881,
+        "ok": true,
+        "status": 200,
+        "value": 79471.94651413792
+      },
+      {
+        "mid": 1788855481,
+        "ok": true,
+        "status": 200,
+        "value": 78317.22582557786
+      },
+      {
+        "mid": 1788812281,
+        "ok": true,
+        "status": 200,
+        "value": 79227.91961158675
+      },
+      {
+        "mid": 1788790681,
+        "ok": true,
+        "status": 200,
+        "value": 79149.93910258
+      },
+      {
+        "mid": 1788779881,
+        "ok": true,
+        "status": 200,
+        "value": 79396.38656528271
+      },
+      {
+        "mid": 1788774481,
+        "ok": true,
+        "status": 200,
+        "value": 79400.09511972654
+      }
+    ]
+  },
+  "roundFloor": {
+    "failLo": 1790361720,
+    "okHi": 1790364060,
+    "spanSec": 2340,
+    "failIso": "2026-09-25T18:42:00.000Z",
+    "okIso": "2026-09-25T19:21:00.000Z",
+    "steps": [
+      {
+        "mid": 1790453880,
+        "ok": true,
+        "status": 200,
+        "id": "btc-1790453880",
+        "outcome": "UP",
+        "err": null
+      },
+      {
+        "mid": 1790302680,
+        "ok": false,
+        "status": 404,
+        "id": null,
+        "outcome": null,
+        "err": "round not found"
+      },
+      {
+        "mid": 1790378280,
+        "ok": true,
+        "status": 200,
+        "id": "btc-1790378280",
+        "outcome": "DOWN",
+        "err": null
+      },
+      {
+        "mid": 1790340480,
+        "ok": false,
+        "status": 404,
+        "id": null,
+        "outcome": null,
+        "err": "round not found"
+      },
+      {
+        "mid": 1790359380,
+        "ok": false,
+        "status": 404,
+        "id": null,
+        "outcome": null,
+        "err": "round not found"
+      },
+      {
+        "mid": 1790368800,
+        "ok": true,
+        "status": 200,
+        "id": "btc-1790368800",
+        "outcome": "DOWN",
+        "err": null
+      },
+      {
+        "mid": 1790364060,
+        "ok": true,
+        "status": 200,
+        "id": "btc-1790364060",
+        "outcome": "UP",
+        "err": null
+      },
+      {
+        "mid": 1790361720,
+        "ok": false,
+        "status": 404,
+        "id": null,
+        "outcome": null,
+        "err": "round not found"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/current",
+  "capturedAt": "2026-10-07T04:03:02.414Z",
+  "sha": "3166e8840c966d364980d37dd964eec8bb04c7cb7c631a8dc6057e2871a54e1d",
+  "payload": {
+    "serverTime": 1791345783,
+    "live": [
+      {
+        "id": "btc-1791345780",
+        "address": "6Zfk8CadaQZTzvHhJJ4YES2wzSjq1bHrGSW9aqScmkou",
+        "asset": "BTC",
+        "openTs": 1791345780,
+        "closeTs": 1791345840,
+        "claimDeadlineTs": null,
+        "status": "live",
+        "outcome": "UNRESOLVED",
+        "upPool": "45000000",
+        "downPool": "40000000",
+        "feeAmount": "0",
+        "remainingPayout": "0",
+        "openPrice": "84161561956",
+        "closePrice": null,
+        "openObservationTs": 1791345780,
+        "closeObservationTs": null
+      },
+      {
+        "id": "sol-1791345780",
+        "address": "59sfP4nkEnoSScDG4cVkT4oTiG3bkaU7nCiCGZNJWkGj",
+        "asset": "SOL",
+        "openTs": 1791345780,
+        "closeTs": 1791345840,
+        "claimDeadlineTs": null,
+        "status": "live",
+        "outcome": "UNRESOLVED",
+        "upPool": "41000000",
+        "downPool": "41000000",
+        "feeAmount": "0",
+        "remainingPayout": "0",
+        "openPrice": "118223143",
+        "closePrice": null,
+        "openObservationTs": 1791345780,
+        "closeObservationTs": null
+      }
+    ],
+    "bettable": [
+      {
+        "id": "btc-1791345840",
+        "address": "6pwqPEP6fHMVtfvgsRm9uPsZ46DpbcT1idUgWsSC7DBF",
+        "asset": "BTC",
+        "openTs": 1791345840,
+        "closeTs": 1791345900,
+        "claimDeadlineTs": null,
+        "status": "betting",
+        "outcome": "UNRESOLVED",
+        "upPool": "0",
+        "downPool": "0",
+        "feeAmount": "0",
+        "remainingPayout": "0",
+        "openPrice": null,
+        "closePrice": null,
+        "openObservationTs": null,
+        "closeObservationTs": null
+      },
+      {
+        "id": "sol-1791345840",
+        "address": "9W972MdmjRTDQPu7WUzZmQcFEp6TtmUzttU64n3XEsgp",
+        "asset": "SOL",
+        "openTs": 1791345840,
+        "closeTs": 1791345900,
+        "claimDeadlineTs": null,
+        "status": "betting",
+        "outcome": "UNRESOLVED",
+        "upPool": "0",
+        "downPool": "0",
+        "feeAmount": "0",
+        "remainingPayout": "0",
+        "openPrice": null,
+        "closePrice": null,
+        "openObservationTs": null,
+        "closeObservationTs": null
+      }
+    ]
+  }
+}

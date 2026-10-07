@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-07T08:19:19.800Z",
+  "priceFloor": {
+    "minus_7d": {
+      "sec": 1790756359,
+      "ok": true,
+      "value": 83227.46276665105
+    },
+    "minus_30d": {
+      "sec": 1788769159,
+      "ok": false,
+      "value": "JUPITER_HTTP_502"
+    },
+    "minus_60d": {
+      "sec": 1786177159,
+      "ok": false,
+      "value": "JUPITER_HTTP_502"
+    },
+    "minus_90d": {
+      "sec": 1783585159,
+      "ok": false,
+      "value": "JUPITER_HTTP_502"
+    },
+    "minus_180d": {
+      "sec": 1775809159,
+      "ok": false,
+      "value": "JUPITER_HTTP_502"
+    },
+    "minus_365d": {
+      "sec": 1759825159,
+      "ok": false,
+      "value": "JUPITER_HTTP_502"
+    },
+    "minus_14d": {
+      "sec": 1790151594,
+      "ok": true,
+      "value": 86251.00524671
+    },
+    "minus_21d": {
+      "sec": 1789546794,
+      "ok": true,
+      "value": 75448.81299482481
+    },
+    "minus_25d": {
+      "sec": 1789201219,
+      "ok": true,
+      "value": 77298.207255816
+    },
+    "minus_28d": {
+      "sec": 1788942019,
+      "ok": true,
+      "value": 79490.47891137695
+    }
+  },
+  "roundRetention": {
+    "minus_0.1d": {
+      "ts": 107481660900,
+      "ok": false,
+      "status": "JUPITER_HTTP_404"
+    },
+    "minus_1d": {
+      "ts": 107481583140,
+      "ok": false,
+      "status": "JUPITER_HTTP_404"
+    },
+    "minus_7d": {
+      "ts": 107481064740,
+      "ok": false,
+      "status": "JUPITER_HTTP_404"
+    },
+    "minus_3h": {
+      "ts": 1791350340,
+      "ok": true,
+      "status": "settled/UP"
+    },
+    "minus_6h": {
+      "ts": 1791339540,
+      "ok": true,
+      "status": "settled/UP"
+    },
+    "minus_12h": {
+      "ts": 1791317940,
+      "ok": true,
+      "status": "settled/DOWN"
+    },
+    "minus_18h": {
+      "ts": 1791296400,
+      "ok": true,
+      "status": "settled/DOWN"
+    }
+  },
+  "summary": {
+    "priceFloor": "28d OK, 30d HTTP502 -> floor in (28d,30d]; validated per-second back to 28d",
+    "roundRetention": "18h OK, 24h 404 -> single-round retention in (18h,24h]; timeline before/after window untested beyond",
+    "note": "Retention is observed capability, not entitlement; re-probe before deep backfills"
+  }
+}

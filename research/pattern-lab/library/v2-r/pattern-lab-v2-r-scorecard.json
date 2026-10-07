@@ -1,0 +1,52 @@
+{
+  "chosen": "quantile18",
+  "test": {
+    "method": "quantile18",
+    "coverage": "0/414",
+    "acted": 0,
+    "acc": null,
+    "brier": 0.2487,
+    "lift_vs_base": null,
+    "baseUP": 0.4662
+  },
+  "nn25": {
+    "acted": 201,
+    "acc": 0.4577,
+    "brier": 0.2728
+  },
+  "scenarios": {
+    "100": {
+      "n_queries": 50,
+      "mean_up_freq": 0.4944
+    },
+    "250": {
+      "n_queries": 50,
+      "mean_up_freq": 0.4959
+    },
+    "500": {
+      "n_queries": 50,
+      "mean_up_freq": 0.4969
+    },
+    "1000": {
+      "n_queries": 50,
+      "mean_up_freq": 0.495
+    }
+  },
+  "baselines_test": {
+    "n": 414,
+    "baseUP": 0.4662,
+    "alwaysUP": 0.4662,
+    "alwaysDOWN": 0.5338,
+    "prevCont": 0.5121,
+    "prevRev": 0.4879,
+    "sign_ret_60": 0.5338,
+    "sign_ret_300": 0.5048,
+    "sign_ret_600": 0.5193
+  },
+  "replayDeterministic": true,
+  "splits": {
+    "train": 1239,
+    "validation": 413,
+    "test": 414
+  }
+}

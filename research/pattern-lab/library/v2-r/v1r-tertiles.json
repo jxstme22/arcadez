@@ -1,0 +1,10 @@
+{
+  "note": "reconstructed with frozen code on frozen V1 TRAIN (library never persisted numerics — documented gap)",
+  "thresholds": {
+    "mLo": 0,
+    "mHi": 0,
+    "vLo": 1.8792,
+    "vHi": 3.0841
+  },
+  "n": 1006
+}

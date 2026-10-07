@@ -1,0 +1,4 @@
+regime,v1_tr_n,v1_tr_up,v1_va_up,v1_te_up,v2_tr_n,v2_tr_up,v2_va_up,v2_te_up,verdict
+Q-flat-high-smooth,335,0.4896,0.5255,0.4956,410,0.4829,0.5135,0.4946,COLLAPSED
+Q-flat-low-smooth,335,0.4716,0.4732,0.413,406,0.4655,0.4865,0.3647,COLLAPSED
+Q-flat-med-smooth,336,0.497,0.4186,0.5115,423,0.5083,0.4615,0.4897,COLLAPSED

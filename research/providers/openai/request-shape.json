@@ -1,0 +1,16 @@
+{
+  "arm": "openai",
+  "url": "https://api.openai.com/v1/decisions",
+  "model": "gpt-6-luna",
+  "body": {
+    "model": "gpt-6-luna",
+    "input": "{\"experiment\":\"ARCADE_DECISIONS_V0\",\"version\":\"0.1.0\",\"market\":\"Jupiter Arcade BTC 1m NEXT round\",\"target\":{\"round_id\":\"EXAMPLE\",\"start_ms\":1791345780000,\"end_ms\":1791345840000,\"open_price_known\":false},\"as_of_received_ms\":1791345770000,\"feature\":{\"last_price_usd\":84065.87},\"provenance\":\"JUPITER_LIVE_RECEIPT_ONLY\"}",
+    "questions": [
+      {
+        "type": "predicate",
+        "name": "next_btc_arcade_up",
+        "instructions": "Given ONLY this Jupiter-derived snapshot received before the decision time, is the UPCOMING BTC Arcade 60-second round more likely to settle UP (future close > its future opening price)? The upcoming opening price is unknown. Do not predict the currently active round. Estimate probability, do not invent missing inputs."
+      }
+    ]
+  }
+}

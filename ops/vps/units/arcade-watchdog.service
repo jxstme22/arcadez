@@ -1,0 +1,10 @@
+[Unit]
+Description=Arcade watchdog check (read-only + safe restarts)
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=ARCADE_ROOT=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/live
+ExecStart=/usr/bin/node ops/vps/watchdog.mjs --fix

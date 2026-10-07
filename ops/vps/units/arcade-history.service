@@ -1,0 +1,17 @@
+[Unit]
+Description=Arcade historical harvester (bounded resume loop)
+After=network-online.target
+
+[Service]
+Environment=HISTORY_DIR=/data/arcade/history
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+ExecStart=/bin/bash ops/vps/history-loop.sh
+Restart=on-failure
+RestartSec=60
+StandardOutput=append:/data/arcade/logs/history.log
+StandardError=append:/data/arcade/logs/history.log
+
+[Install]
+WantedBy=multi-user.target

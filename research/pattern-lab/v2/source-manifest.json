@@ -1,0 +1,41 @@
+{
+  "checkpoint_created_at": "2026-10-07T14:23:23.257Z",
+  "method": "VACUUM INTO from readOnly open of ./var/history/arcade.sqlite; source unmutated",
+  "rounds": 2569,
+  "labelled": 2564,
+  "byResult": [
+    {
+      "result": "DOWN",
+      "c": 1309
+    },
+    {
+      "result": "UP",
+      "c": 1255
+    },
+    {
+      "result": "VOID",
+      "c": 5
+    }
+  ],
+  "byProvenance": [
+    {
+      "provenance": "VENUE_RECORDED",
+      "c": 2564
+    },
+    {
+      "provenance": "VENUE_RECORDED_VOID",
+      "c": 5
+    }
+  ],
+  "earliest": 1791124320000,
+  "latest": 1791378780000,
+  "prices": 3615,
+  "priceEarliest": 1791206520000,
+  "priceLatest": 1791380160000,
+  "sha256": "b0869ba446c9fdce6cba5131609aa3744df40a21e7f3aea424a224d1768348a2",
+  "gate_2500": "PASS",
+  "checkpoint_rounds": 2569,
+  "checkpoint_labelled": 2564,
+  "checkpoint_prices": 3615,
+  "note": "manifest counts taken pre-VACUUM; checkpoint self-count authoritative (2569/2564/3615)"
+}

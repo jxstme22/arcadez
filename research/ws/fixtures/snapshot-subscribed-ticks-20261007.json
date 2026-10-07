@@ -1,0 +1,648 @@
+{
+  "url": "wss://prediction-market-price-service.fly.dev/ws/crypto",
+  "capturedAt": "2026-10-07T04:19:50.073Z",
+  "frames": [
+    {
+      "at": 1791346781473,
+      "data": {
+        "type": "snapshot",
+        "symbol": "btcusdt",
+        "data": [
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346657000,
+            "value": 84048.21158806587
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346658000,
+            "value": 84046.82925377639
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346659000,
+            "value": 84046.9318129935
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346660000,
+            "value": 84047.16438634766
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346661000,
+            "value": 84044.49403854877
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346662000,
+            "value": 84044.19125771917
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346663000,
+            "value": 84046.65687285426
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346664000,
+            "value": 84044.79272897057
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346665000,
+            "value": 84044.37179343576
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346666000,
+            "value": 84044.34742576482
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346667000,
+            "value": 84044.54921860265
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346668000,
+            "value": 84044.3670601806
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346669000,
+            "value": 84044.84654026022
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346670000,
+            "value": 84048.10082905176
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346671000,
+            "value": 84047.65028916886
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346672000,
+            "value": 84047.89177805143
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346673000,
+            "value": 84047.300758765
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346674000,
+            "value": 84058.53259694441
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346675000,
+            "value": 84075.43384064459
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346676000,
+            "value": 84079.8943376835
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346677000,
+            "value": 84079.78137839981
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346678000,
+            "value": 84079.56890018833
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346679000,
+            "value": 84079.76476175693
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346680000,
+            "value": 84081.27315801769
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346681000,
+            "value": 84078.42919160855
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346682000,
+            "value": 84079.62254381724
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346683000,
+            "value": 84078.12789482449
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346684000,
+            "value": 84071.33381700444
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346685000,
+            "value": 84068.06831474531
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346686000,
+            "value": 84066.54383095792
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346687000,
+            "value": 84066.25379519694
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346688000,
+            "value": 84066.79197269116
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346689000,
+            "value": 84065.097013072
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346690000,
+            "value": 84067.86802546313
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346691000,
+            "value": 84064.98987403934
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346692000,
+            "value": 84061.33981678332
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346693000,
+            "value": 84053.94509499316
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346694000,
+            "value": 84050.58482930854
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346695000,
+            "value": 84049.03598305355
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346696000,
+            "value": 84050.67719849448
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346697000,
+            "value": 84050.59715239066
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346698000,
+            "value": 84047.48228792632
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346699000,
+            "value": 84047.35542658759
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346700000,
+            "value": 84045.49340094
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346701000,
+            "value": 84043.57134689436
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346702000,
+            "value": 84042.62517599453
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346703000,
+            "value": 84042.80787550949
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346704000,
+            "value": 84043.27698083111
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346705000,
+            "value": 84042.3434962604
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346706000,
+            "value": 84042.47167873985
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346707000,
+            "value": 84042.68017210766
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346708000,
+            "value": 84041.96184453473
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346709000,
+            "value": 84041.30737628683
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346710000,
+            "value": 84041.14899500628
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346711000,
+            "value": 84041.41690051826
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346713000,
+            "value": 84040.55556413383
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346714000,
+            "value": 84040.68087441963
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346715000,
+            "value": 84040.56203918859
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346716000,
+            "value": 84040.43049412259
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346717000,
+            "value": 84040.45466677664
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346718000,
+            "value": 84040.37520542812
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346719000,
+            "value": 84040.40188208227
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346720000,
+            "value": 84042.98239745751
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346721000,
+            "value": 84043.02848546453
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346722000,
+            "value": 84040.04106176192
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346723000,
+            "value": 84039.99914064218
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346724000,
+            "value": 84040.02706756367
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346725000,
+            "value": 84040.1771124143
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346726000,
+            "value": 84040.59773143107
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346727000,
+            "value": 84040.73641289883
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346728000,
+            "value": 84040.83281269766
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346729000,
+            "value": 84041.71702617162
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346730000,
+            "value": 84045.18899985205
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346731000,
+            "value": 84044.014406415
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346732000,
+            "value": 84044.043932295
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346733000,
+            "value": 84045.7618831366
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346734000,
+            "value": 84045.44177308462
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346735000,
+            "value": 84045.64952034183
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346737000,
+            "value": 84061.0063489996
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346738000,
+            "value": 84062.04279357944
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346739000,
+            "value": 84062.15488608663
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346740000,
+            "value": 84062.2394637412
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346741000,
+            "value": 84064.7915041149
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346742000,
+            "value": 84065.27674084656
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346743000,
+            "value": 84065.62917404537
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346744000,
+            "value": 84065.5945690795
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346745000,
+            "value": 84065.58464062819
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346746000,
+            "value": 84065.99454437874
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346747000,
+            "value": 84065.95628745174
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346749000,
+            "value": 84066.56167246975
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346750000,
+            "value": 84066.62878580108
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346751000,
+            "value": 84066.62152614261
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346752000,
+            "value": 84065.87387448562
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346753000,
+            "value": 84066.156
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346754000,
+            "value": 84065.92455844374
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346756000,
+            "value": 84065.7909086667
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346757000,
+            "value": 84066.07708691884
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346758000,
+            "value": 84066.18556845978
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346759000,
+            "value": 84074.37040241597
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346760000,
+            "value": 84074.63834844378
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346761000,
+            "value": 84071.8350941994
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346762000,
+            "value": 84073.5850083392
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346763000,
+            "value": 84078.25424169749
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346764000,
+            "value": 84081.03905454611
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346765000,
+            "value": 84082.36138638458
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346766000,
+            "value": 84083.03981112
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346767000,
+            "value": 84085.60064136569
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346768000,
+            "value": 84085.09984237836
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346769000,
+            "value": 84086.07568325923
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346770000,
+            "value": 84083.641211865
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346771000,
+            "value": 84083.72998272
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346772000,
+            "value": 84086.47987390123
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346773000,
+            "value": 84086.66543630912
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346774000,
+            "value": 84086.04665152628
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346775000,
+            "value": 84087.19187704899
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346776000,
+            "value": 84086.80698562368
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346777000,
+            "value": 84086.67879746523
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346778000,
+            "value": 84088.43886047669
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346779000,
+            "value": 84087.1126808599
+          },
+          {
+            "symbol": "btcusdt",
+            "timestamp": 1791346780000,
+            "value": 84087.10362597425
+          }
+        ]
+      }
+    },
+    {
+      "at": 1791346781474,
+      "data": {
+        "type": "subscribed",
+        "symbols": [
+          "btcusdt"
+        ]
+      }
+    },
+    {
+      "at": 1791346782599,
+      "data": {
+        "symbol": "btcusdt",
+        "timestamp": 1791346781000,
+        "value": 84086.42965029854
+      }
+    },
+    {
+      "at": 1791346783098,
+      "data": {
+        "symbol": "btcusdt",
+        "timestamp": 1791346782000,
+        "value": 84086.29809120976
+      }
+    },
+    {
+      "at": 1791346784103,
+      "data": {
+        "symbol": "btcusdt",
+        "timestamp": 1791346783000,
+        "value": 84086.37942901184
+      }
+    }
+  ]
+}

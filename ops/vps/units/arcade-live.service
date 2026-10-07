@@ -1,0 +1,18 @@
+[Unit]
+Description=Arcade live collector (WS ticks, rounds, pools, trades)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/live
+ExecStart=/usr/bin/node scripts/collector-daemon.mjs
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/data/arcade/logs/live.log
+StandardError=append:/data/arcade/logs/live.log
+
+[Install]
+WantedBy=multi-user.target

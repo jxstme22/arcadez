@@ -1,0 +1,562 @@
+{
+  "probedAt": "2026-10-07T08:18:01.216Z",
+  "nowSec": 1791361081,
+  "nowIso": "2026-10-07T08:18:01.000Z",
+  "priceProbes": [
+    {
+      "offsetSec": 900,
+      "kind": "price",
+      "requested_ts": 1791360181,
+      "returned_ts": 1791360181000,
+      "raw_value": 84055.86127517441,
+      "parsed_value": 84055.86127517441,
+      "retrieved_at": "2026-10-07T08:18:01.971Z",
+      "http_status": 200,
+      "response_hash": "0aaab66b04f5d54a833c2e5acf9da3327e3b0bdc6b082bb8eef903765e05c64c",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791360181",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 3600,
+      "kind": "price",
+      "requested_ts": 1791357481,
+      "returned_ts": 1791357481000,
+      "raw_value": 84164.32695354205,
+      "parsed_value": 84164.32695354205,
+      "retrieved_at": "2026-10-07T08:18:04.352Z",
+      "http_status": 200,
+      "response_hash": "3e34e74d728b04510949a3a04262218bd975e6918e87a6707d43cce078184b3a",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791357481",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 21600,
+      "kind": "price",
+      "requested_ts": 1791339481,
+      "returned_ts": 1791339481000,
+      "raw_value": 84014.14608998311,
+      "parsed_value": 84014.14608998311,
+      "retrieved_at": "2026-10-07T08:18:06.746Z",
+      "http_status": 200,
+      "response_hash": "ea38fa143999d43233004d9bf9fd2e90ab911ab92ae6d010998503c0b463e82e",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791339481",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 86400,
+      "kind": "price",
+      "requested_ts": 1791274681,
+      "returned_ts": 1791274681000,
+      "raw_value": 85766.994211705,
+      "parsed_value": 85766.994211705,
+      "retrieved_at": "2026-10-07T08:18:09.301Z",
+      "http_status": 200,
+      "response_hash": "f7842a61c2bed54100f9fafe00128a663f1e6edc3997ae6288ded160b7367913",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791274681",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 259200,
+      "kind": "price",
+      "requested_ts": 1791101881,
+      "returned_ts": 1791101881000,
+      "raw_value": 85133.22827293703,
+      "parsed_value": 85133.22827293703,
+      "retrieved_at": "2026-10-07T08:18:11.696Z",
+      "http_status": 200,
+      "response_hash": "d721cf3415022b44334fda7d4dbec08d46e17d2704925bef5344b575ec1b7eee",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791101881",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 604800,
+      "kind": "price",
+      "requested_ts": 1790756281,
+      "returned_ts": 1790756281000,
+      "raw_value": 83179.26533724801,
+      "parsed_value": 83179.26533724801,
+      "retrieved_at": "2026-10-07T08:18:14.085Z",
+      "http_status": 200,
+      "response_hash": "a8cd6584c0e0d2f173386a8cbe1e0086a6aa55b413c41a35e307dc79344ecfc8",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1790756281",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 1209600,
+      "kind": "price",
+      "requested_ts": 1790151481,
+      "returned_ts": 1790151481000,
+      "raw_value": 86236.88706652979,
+      "parsed_value": 86236.88706652979,
+      "retrieved_at": "2026-10-07T08:18:16.645Z",
+      "http_status": 200,
+      "response_hash": "936e64ca8caded0530d3cd3f5d62a25398769a37f9bf3b6f493e3335c3b7165c",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1790151481",
+      "ok_detailed": true,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 2592000,
+      "kind": "price",
+      "requested_ts": 1788769081,
+      "returned_ts": 1788769081,
+      "raw_value": null,
+      "parsed_value": null,
+      "retrieved_at": "2026-10-07T08:18:19.166Z",
+      "http_status": 502,
+      "response_hash": "0f6f05150f10436ee17691b2771d567fe79f86642879c873b056250e805a16a8",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1788769081",
+      "ok_detailed": false,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 5184000,
+      "kind": "price",
+      "requested_ts": 1786177081,
+      "returned_ts": 1786177081,
+      "raw_value": null,
+      "parsed_value": null,
+      "retrieved_at": "2026-10-07T08:18:21.626Z",
+      "http_status": 502,
+      "response_hash": "6ea9a5d4e1bcce751caee3953d83dc07b6884ca4e9cc516d584c0b31dd7a3462",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1786177081",
+      "ok_detailed": false,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 7776000,
+      "kind": "price",
+      "requested_ts": 1783585081,
+      "returned_ts": 1783585081,
+      "raw_value": null,
+      "parsed_value": null,
+      "retrieved_at": "2026-10-07T08:18:24.018Z",
+      "http_status": 502,
+      "response_hash": "78d3d3036636e214a72040635f6e48b81a96926d9e94cb7d4334bfde7dfe0f06",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1783585081",
+      "ok_detailed": false,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 15552000,
+      "kind": "price",
+      "requested_ts": 1775809081,
+      "returned_ts": 1775809081,
+      "raw_value": null,
+      "parsed_value": null,
+      "retrieved_at": "2026-10-07T08:18:26.398Z",
+      "http_status": 502,
+      "response_hash": "c1b48e77b624e1ea1325476ede3ccfc6c6aca1cd423cce96b667c66ee03760b5",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1775809081",
+      "ok_detailed": false,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    },
+    {
+      "offsetSec": 31536000,
+      "kind": "price",
+      "requested_ts": 1759825081,
+      "returned_ts": 1759825081,
+      "raw_value": null,
+      "parsed_value": null,
+      "retrieved_at": "2026-10-07T08:18:28.880Z",
+      "http_status": 502,
+      "response_hash": "4a457d16ae60642ff6f49e8dfc0ec4d2be694415d8ac762c155dce38e93e4c3c",
+      "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1759825081",
+      "ok_detailed": false,
+      "error": null,
+      "raw_symbol": "btcusdt"
+    }
+  ],
+  "roundProbes": [
+    {
+      "offsetSec": 900,
+      "kind": "round",
+      "requested_ts": 1791360180,
+      "returned_id": "btc-1791360180",
+      "returned_status": "settled",
+      "returned_outcome": "UP",
+      "openPrice": "84055524071",
+      "closePrice": "84094396387",
+      "retrieved_at": "2026-10-07T08:18:31.544Z",
+      "http_status": 200,
+      "response_hash": "9b1e2dd4cd1f503e8b4773dffcd1c52835250a0ecb81b75e0b1a53e1afeff476",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791360180",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 3600,
+      "kind": "round",
+      "requested_ts": 1791357480,
+      "returned_id": "btc-1791357480",
+      "returned_status": "settled",
+      "returned_outcome": "UP",
+      "openPrice": "84165765181",
+      "closePrice": "84175034000",
+      "retrieved_at": "2026-10-07T08:18:33.939Z",
+      "http_status": 200,
+      "response_hash": "e48628fa54ccfe727cba326a2a565024c76da89eb50ad3d53692108327c93f82",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791357480",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 21600,
+      "kind": "round",
+      "requested_ts": 1791339480,
+      "returned_id": "btc-1791339480",
+      "returned_status": "settled",
+      "returned_outcome": "UP",
+      "openPrice": "84018358750",
+      "closePrice": "84048957681",
+      "retrieved_at": "2026-10-07T08:18:36.337Z",
+      "http_status": 200,
+      "response_hash": "3b0e61d2fe1acc97d4d7271ded0a17e3ff27dc1051d1b453ae8854836eb218e1",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791339480",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 86400,
+      "kind": "round",
+      "requested_ts": 1791274680,
+      "returned_id": "btc-1791274680",
+      "returned_status": "settled",
+      "returned_outcome": "UP",
+      "openPrice": "85766984304",
+      "closePrice": "85773383071",
+      "retrieved_at": "2026-10-07T08:18:38.742Z",
+      "http_status": 200,
+      "response_hash": "aa3ba39ade53d72a83e817b271c9c788e0ab69310338871838859c24e2f830f6",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791274680",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 259200,
+      "kind": "round",
+      "requested_ts": 1791101880,
+      "returned_id": "btc-1791101880",
+      "returned_status": "settled",
+      "returned_outcome": "DOWN",
+      "openPrice": "85133215286",
+      "closePrice": "85130443442",
+      "retrieved_at": "2026-10-07T08:18:41.184Z",
+      "http_status": 200,
+      "response_hash": "e89305caf03150f4f19cc2b936f1eeaf0e0856832a33f47f95627f8724360966",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1791101880",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 604800,
+      "kind": "round",
+      "requested_ts": 1790756280,
+      "returned_id": "btc-1790756280",
+      "returned_status": "settled",
+      "returned_outcome": "UP",
+      "openPrice": "83179112905",
+      "closePrice": "83238672422",
+      "retrieved_at": "2026-10-07T08:18:43.582Z",
+      "http_status": 200,
+      "response_hash": "3a7915c1fac5a06a6aa27b23232e8065a599734d5df33c316da18e7ce154c79f",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1790756280",
+      "ok_detailed": true,
+      "error": null
+    },
+    {
+      "offsetSec": 1209600,
+      "kind": "round",
+      "requested_ts": 1790151480,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:45.982Z",
+      "http_status": 404,
+      "response_hash": "dcccd8213ed636783f65b1d38785d271aa506ae7d0ca7fc8f323fb5dcf88589b",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1790151480",
+      "ok_detailed": false,
+      "error": "round not found"
+    },
+    {
+      "offsetSec": 2592000,
+      "kind": "round",
+      "requested_ts": 1788769080,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:48.385Z",
+      "http_status": 404,
+      "response_hash": "f015c967a50be2341724a501af004a3758138e7e12317237a7e0fcf52077b002",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1788769080",
+      "ok_detailed": false,
+      "error": "round not found"
+    },
+    {
+      "offsetSec": 5184000,
+      "kind": "round",
+      "requested_ts": 1786177080,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:50.795Z",
+      "http_status": 404,
+      "response_hash": "858a8f6708a9aee38a8f9815c3533b4a2c7b879ce007dc7b9d5189d18501d2e3",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1786177080",
+      "ok_detailed": false,
+      "error": "round not found"
+    },
+    {
+      "offsetSec": 7776000,
+      "kind": "round",
+      "requested_ts": 1783585080,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:53.243Z",
+      "http_status": 404,
+      "response_hash": "9d3d1a41274b3a6d0075837ce6107502b224c835ece342069af82710c9e6c637",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1783585080",
+      "ok_detailed": false,
+      "error": "round not found"
+    },
+    {
+      "offsetSec": 15552000,
+      "kind": "round",
+      "requested_ts": 1775809080,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:55.648Z",
+      "http_status": 404,
+      "response_hash": "fbfda5dc5ea756b007114b49e3a69bfa5288fa629ebfa932edb012e6d8910d5e",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1775809080",
+      "ok_detailed": false,
+      "error": "round not found"
+    },
+    {
+      "offsetSec": 31536000,
+      "kind": "round",
+      "requested_ts": 1759825080,
+      "returned_id": null,
+      "returned_status": null,
+      "returned_outcome": null,
+      "openPrice": null,
+      "closePrice": null,
+      "retrieved_at": "2026-10-07T08:18:58.066Z",
+      "http_status": 404,
+      "response_hash": "ed278dfb82bb270a683d79247f9d500baf83bea3b6e974c2114336bb3a6a01dc",
+      "url": "https://prediction-market-api.jup.ag/api/v1/play/rounds/BTC/1759825080",
+      "ok_detailed": false,
+      "error": "round not found"
+    }
+  ],
+  "granularity": [
+    {
+      "requested_ts": 1791359881,
+      "returned_ts": 1791359881000,
+      "value": 84087.98016593029,
+      "status": 200,
+      "ok": true
+    },
+    {
+      "requested_ts": 1791359882,
+      "returned_ts": 1791359882000,
+      "value": 84088.34178716256,
+      "status": 200,
+      "ok": true
+    },
+    {
+      "requested_ts": 1791359883,
+      "returned_ts": 1791359883000,
+      "value": 84088.6355145137,
+      "status": 200,
+      "ok": true
+    },
+    {
+      "requested_ts": 1791359884,
+      "returned_ts": 1791359884000,
+      "value": 84088.62828803093,
+      "status": 200,
+      "ok": true
+    },
+    {
+      "requested_ts": 1791359885,
+      "returned_ts": 1791359885000,
+      "value": 84088.35810637203,
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "notes": [],
+  "determinism": {
+    "ts": 1791359281,
+    "a_value": 84242.99952482819,
+    "b_value": 84242.99952482819,
+    "a_hash": "9cca9dd49a975af3889460f0d513fdd6bf09bacc2ccd55124d5541c529f77c10",
+    "b_hash": "9cca9dd49a975af3889460f0d513fdd6bf09bacc2ccd55124d5541c529f77c10",
+    "identical": true
+  },
+  "floorSearch": {
+    "probedAt": "2026-10-07T08:20:05.942Z",
+    "priceFloor": {
+      "failLo": 1788769081,
+      "okHi": 1788774481,
+      "spanSec": 5400,
+      "failIso": "2026-09-07T08:18:01.000Z",
+      "okIso": "2026-09-07T09:48:01.000Z",
+      "steps": [
+        {
+          "mid": 1789460281,
+          "ok": true,
+          "status": 200,
+          "value": 76700.04582223148
+        },
+        {
+          "mid": 1789114681,
+          "ok": true,
+          "status": 200,
+          "value": 77216.39652779307
+        },
+        {
+          "mid": 1788941881,
+          "ok": true,
+          "status": 200,
+          "value": 79471.94651413792
+        },
+        {
+          "mid": 1788855481,
+          "ok": true,
+          "status": 200,
+          "value": 78317.22582557786
+        },
+        {
+          "mid": 1788812281,
+          "ok": true,
+          "status": 200,
+          "value": 79227.91961158675
+        },
+        {
+          "mid": 1788790681,
+          "ok": true,
+          "status": 200,
+          "value": 79149.93910258
+        },
+        {
+          "mid": 1788779881,
+          "ok": true,
+          "status": 200,
+          "value": 79396.38656528271
+        },
+        {
+          "mid": 1788774481,
+          "ok": true,
+          "status": 200,
+          "value": 79400.09511972654
+        }
+      ]
+    },
+    "roundFloor": {
+      "failLo": 1790361720,
+      "okHi": 1790364060,
+      "spanSec": 2340,
+      "failIso": "2026-09-25T18:42:00.000Z",
+      "okIso": "2026-09-25T19:21:00.000Z",
+      "steps": [
+        {
+          "mid": 1790453880,
+          "ok": true,
+          "status": 200,
+          "id": "btc-1790453880",
+          "outcome": "UP",
+          "err": null
+        },
+        {
+          "mid": 1790302680,
+          "ok": false,
+          "status": 404,
+          "id": null,
+          "outcome": null,
+          "err": "round not found"
+        },
+        {
+          "mid": 1790378280,
+          "ok": true,
+          "status": 200,
+          "id": "btc-1790378280",
+          "outcome": "DOWN",
+          "err": null
+        },
+        {
+          "mid": 1790340480,
+          "ok": false,
+          "status": 404,
+          "id": null,
+          "outcome": null,
+          "err": "round not found"
+        },
+        {
+          "mid": 1790359380,
+          "ok": false,
+          "status": 404,
+          "id": null,
+          "outcome": null,
+          "err": "round not found"
+        },
+        {
+          "mid": 1790368800,
+          "ok": true,
+          "status": 200,
+          "id": "btc-1790368800",
+          "outcome": "DOWN",
+          "err": null
+        },
+        {
+          "mid": 1790364060,
+          "ok": true,
+          "status": 200,
+          "id": "btc-1790364060",
+          "outcome": "UP",
+          "err": null
+        },
+        {
+          "mid": 1790361720,
+          "ok": false,
+          "status": 404,
+          "id": null,
+          "outcome": null,
+          "err": "round not found"
+        }
+      ]
+    }
+  },
+  "earliestPriceSecEstimate": 1788774481,
+  "earliestRoundOpenTsEstimate": 1790364060
+}

@@ -1,0 +1,30 @@
+{
+  "name": "arcade-decisions-cleanroom",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Independent Jupiter Arcade BTC paper-research and three-model benchmark, zero write endpoints",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "doctor": "node src/cli.mjs doctor",
+    "discover": "node src/cli.mjs discover",
+    "paper": "node src/cli.mjs paper",
+    "start:paper": "bash ops/start-paper-and-dashboard.sh",
+    "demo": "node src/cli.mjs demo",
+    "report": "node src/cli.mjs report",
+    "replay": "node src/cli.mjs replay",
+    "capture": "node src/cli.mjs capture",
+    "harvest": "node src/cli.mjs harvest",
+    "harvest:status": "node src/cli.mjs harvest:status",
+    "dashboard": "node src/cli.mjs dashboard",
+    "paper:smoke20": "node scripts/paper-smoke-live.mjs",
+    "paper:smoke100": "node scripts/paper-smoke-live.mjs",
+    "paper:verify-ws": "node scripts/verify-ws.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test",
+    "pattern:status": "node scripts/pattern-status.mjs",
+    "pattern:replay": "node scripts/replay-nodes.mjs"
+  }
+}

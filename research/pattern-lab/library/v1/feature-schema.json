@@ -1,0 +1,29 @@
+{
+  "version": "pl-features-v1",
+  "keptCols": [
+    "ret_120",
+    "ret_180",
+    "ret_300",
+    "ret_600",
+    "vol_180",
+    "vol_300",
+    "vol_600",
+    "range_60",
+    "range_300",
+    "position_in_range_300",
+    "direction_flips_300s",
+    "vol_expansion_180v300",
+    "range_expansion_180v300",
+    "prev_dir_up",
+    "previous_5_up_rate",
+    "previous_10_up_rate",
+    "current_streak_length",
+    "breakout_up",
+    "breakout_down"
+  ],
+  "horizons": [
+    60,
+    120,
+    300
+  ]
+}

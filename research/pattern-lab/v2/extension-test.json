@@ -1,0 +1,21 @@
+{
+  "v1max": "2026-10-07T13:13:00.000Z",
+  "n": 0,
+  "baseUP": null,
+  "regime": {
+    "acted": 0,
+    "acc": null,
+    "brier": 0,
+    "perRegime": {}
+  },
+  "knn": {
+    "acted": 0,
+    "acc": null,
+    "brier": null
+  },
+  "scen1000": {
+    "acted": 0,
+    "acc": null,
+    "brier": null
+  }
+}

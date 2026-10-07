@@ -1,0 +1,18 @@
+[Unit]
+Description=Arcade local dashboard (loopback only)
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/live
+Environment=DASHBOARD_PORT=8789
+ExecStart=/usr/bin/node src/cli.mjs dashboard
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:/data/arcade/logs/dashboard.log
+StandardError=append:/data/arcade/logs/dashboard.log
+
+[Install]
+WantedBy=multi-user.target

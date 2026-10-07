@@ -1,0 +1,50 @@
+{
+  "source": "https://jup.ag/assets/vendor-tanstack-runtime-BGcYqU3f.js + usePredictionMarketCryptoPriceWebsocket-CD71r8Uu.js",
+  "accessedAt": "2026-10-07T11:20Z",
+  "classification": "FRONTEND_OBSERVED (production bundle, not official docs)",
+  "baseWsUrl": "wss://prediction-market-price-service.fly.dev/ws",
+  "cryptoWs": "wss://prediction-market-price-service.fly.dev/ws/crypto",
+  "subscribe": {
+    "type": "subscribe",
+    "symbols": [
+      "btcusdt"
+    ]
+  },
+  "unsubscribeAll": {
+    "type": "unsubscribe_all"
+  },
+  "priceFrame": {
+    "symbol": "btcusdt",
+    "value": 84187.36,
+    "timestamp": 1791345875000
+  },
+  "timestampUnit": "milliseconds (REST validates r.timestamp === requestedSec*1e3; WS compares numeric timestamps, replaces on equal, drops older)",
+  "symbols": [
+    "btcusdt",
+    "ethusdt",
+    "solusdt",
+    "xrpusdt",
+    "bnbusdt",
+    "dogeusdt",
+    "hypeusdt",
+    "spcxusd"
+  ],
+  "controlFrames": [
+    "snapshot",
+    "subscribed",
+    "unsubscribed",
+    "unsubscribed_all",
+    "error:upstream_connect_failed"
+  ],
+  "keepLast": 120,
+  "staleAfterMs": 30000,
+  "restPrice": "GET https://prediction-market-price-service.fly.dev/price/crypto/{symbol}?timestamp={sec} -> {symbol,timestamp(ms),value}",
+  "candles": "GET /price/crypto/{symbol}/candles (params unverified)",
+  "payout": {
+    "gross": "total/winnerPool; 1.0 if total zero; null if winning pool zero",
+    "netFactor": "0.99 (9900/1e4) when multiplier known, else 1 (no bet)",
+    "feeBps": 100,
+    "source": "arcade-c0dHAUTl.js gn/vn functions",
+    "feeAmountField": "UNVERIFIED (observed values ~0.02-0.2% of total, not 1%; semantics unknown)"
+  }
+}

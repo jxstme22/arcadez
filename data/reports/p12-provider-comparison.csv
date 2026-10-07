@@ -1,0 +1,4 @@
+arm,eligible,acted,skipRate,up,down,wins,losses,accuracy,brier,latP50,latP90,latP99,late,errors
+openai,100,0,1.000,0,0,0,0,,0.2500,561,897,1635,0,81
+jev,100,0,1.000,0,0,0,0,,0.2515,535,810,1357,0,0
+glide,100,85,0.150,74,11,42,43,0.4941,0.2965,2624,3168,4371,0,0

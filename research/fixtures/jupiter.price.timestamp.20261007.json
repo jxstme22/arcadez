@@ -1,0 +1,9 @@
+{
+  "url": "https://prediction-market-price-service.fly.dev/price/crypto/btcusdt?timestamp=1791345875",
+  "capturedAt": "2026-10-07T04:07:38.255Z",
+  "payload": {
+    "symbol": "btcusdt",
+    "timestamp": 1791345875000,
+    "value": 84187.36068833322
+  }
+}

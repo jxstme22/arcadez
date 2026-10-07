@@ -1,0 +1,25 @@
+{
+  "url": "https://prediction-market-api.jup.ag/api/v1/play/config",
+  "capturedAt": "2026-10-07T04:02:58.525Z",
+  "sha": "cdaaecea3562efbf455607ca2f0c90baaa2729e9f03b4c465b40723b944d5b06",
+  "payload": {
+    "programId": "2DeGBCAiEJd1MgMuPGDKh7svBikZa9izbnTn5p7ESzPt",
+    "settlementMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "settlementDecimals": 6,
+    "assets": [
+      "BTC",
+      "SOL"
+    ],
+    "roundDurationSeconds": 60,
+    "betCutoffSeconds": 5,
+    "clientDisableBufferSeconds": 0,
+    "feeBps": 100,
+    "paused": false,
+    "limits": {
+      "minimum": "1000000",
+      "maximumPerEntry": "1000000000",
+      "maximumPerWallet": "5000000000",
+      "maximumPool": "100000000000"
+    }
+  }
+}
