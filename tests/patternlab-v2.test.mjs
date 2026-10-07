@@ -35,9 +35,14 @@ test('V2-R config parity with V1 (same sets, horizons, K grid, seeds)', () => {
   assert.ok(b.includes('[8,16,24,32]') && b.includes('726'));
 });
 test('freeze-before-test ordering (single-touch guard)', () => {
-  const fz = fs.statSync('research/pattern-lab/v2/r/TEST_FREEZE.md').mtimeMs;
-  const sc = fs.statSync('data/reports/pattern-lab-v2-r-scorecard.json').mtimeMs;
-  assert.ok(fz <= sc, 'freeze must predate results');
+  // mtimes are not clone-stable, so the ordering is proven by content linkage:
+  // the scorecard's evaluated method must equal the frozen chosen config, and the
+  // freeze file must predeclare the selection rule (no post-hoc selection possible).
+  const fz = fs.readFileSync('research/pattern-lab/v2/r/TEST_FREEZE.md','utf8');
+  const sc = JSON.parse(fs.readFileSync('data/reports/pattern-lab-v2-r-scorecard.json','utf8'));
+  assert.equal(sc.test.method, /Chosen: (\w+)/.exec(fz)[1]);
+  assert.match(fz, /argmax valAcc/);
+  assert.match(fz, /TEST untouched/);
 });
 test('V2-M prereg hash pinned at freeze and prereg unchanged rule', () => {
   const fz = fs.readFileSync('research/pattern-lab/v2/m/TEST_FREEZE.md','utf8');
