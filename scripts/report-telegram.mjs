@@ -9,6 +9,7 @@ if (!token || !chat) { console.error('TELEGRAM_CREDENTIALS_MISSING'); process.ex
 const cfg = {...config(), dataDir: process.env.LIVE_DIR || './var/p12ab-live'};
 const s = new Store(cfg.dataDir);
 const ids = s.db.prepare(`SELECT DISTINCT d.round_id FROM decisions d JOIN rounds r ON r.id=d.round_id WHERE r.result IN ('UP','DOWN')`).all().map(r => r.round_id);
+if (!ids.length) { s.close(); console.log('TELEGRAM_SKIP_EMPTY (no settled rounds; A/B not started)'); process.exit(0); }
 const nUp = ids.length ? s.db.prepare(`SELECT COUNT(*) n FROM rounds WHERE id IN (${ids.map(()=>'?').join(',')}) AND result='UP'`).get(...ids).n : 0;
 const rows = ids.length ? s.db.prepare(`SELECT d.arm, d.action, p.correct FROM decisions d LEFT JOIN paper p ON p.round_id=d.round_id AND p.arm=d.arm WHERE d.round_id IN (${ids.map(()=>'?').join(',')})`).all(...ids) : [];
 const by = {};
