@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {DatabaseSync} from 'node:sqlite';
 import {plVector, FEATURE_SETS, redundancyAudit} from '../src/plfeatures.mjs';
+import {checkpointPath, splitsDir} from '../src/checkpoint.mjs';
 
-const CKPT = 'var/pattern-lab/v1/source/history-checkpoint.db';
+const CKPT = checkpointPath('v1');
+const SPLITS = splitsDir('v1');
 test('checkpoint exists, immutable, Session-B storage untouched by Session C', () => {
   const man = JSON.parse(fs.readFileSync('research/pattern-lab/v1/source-manifest.json','utf8'));
   const h = crypto.createHash('sha256').update(fs.readFileSync(CKPT)).digest('hex');
@@ -14,7 +16,7 @@ test('checkpoint exists, immutable, Session-B storage untouched by Session C', (
   assert.ok(st.size > 1000000);
 });
 test('splits chronological, disjoint, frozen', () => {
-  const L = n => JSON.parse(fs.readFileSync(`var/pattern-lab/v1/splits/${n}.json`,'utf8'));
+  const L = n => JSON.parse(fs.readFileSync(`${SPLITS}/${n}.json`,'utf8'));
   const tr = L('train'), va = L('validation'), te = L('test');
   const ids = [...tr, ...va, ...te].map(r=>r.id);
   assert.equal(new Set(ids).size, ids.length);

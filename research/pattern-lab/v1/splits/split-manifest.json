@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-07T13:54:41.322Z",
+  "n": 1677,
+  "train": 1006,
+  "validation": 335,
+  "test": 336,
+  "rule": "chronological 60/20/20, disjoint, frozen"
+}

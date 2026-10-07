@@ -1,12 +1,12 @@
 {
   "rounds": {
-    "nextOpenTs": 1790989380,
-    "done": 5900,
-    "miss": 3176
+    "nextOpenTs": 1790978880,
+    "done": 6075,
+    "miss": 3290
   },
   "prices60": {
-    "nextTs": 1791075240,
-    "done": 4750,
+    "nextTs": 1791064740,
+    "done": 4925,
     "miss": 0
   },
   "prices1": {

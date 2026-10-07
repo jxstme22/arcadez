@@ -3,10 +3,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 
+import {checkpointPath, splitsDir} from '../src/checkpoint.mjs';
+
 const sha = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const V2CKPT = checkpointPath('v2');
+const V2SPLITS = splitsDir('v2');
 test('V2 checkpoint immutable since creation', () => {
   const man = JSON.parse(fs.readFileSync('research/pattern-lab/v2/source-manifest.json','utf8'));
-  assert.equal(sha('var/pattern-lab/v2/source/history-checkpoint.db'), man.sha256);
+  assert.equal(sha(V2CKPT), man.sha256);
   assert.ok(man.checkpoint_labelled >= 2500);
 });
 test('V1 freeze verifies (library hashes intact)', () => {
@@ -17,7 +21,7 @@ test('V1 freeze verifies (library hashes intact)', () => {
   }
 });
 test('V2-R splits chronological and disjoint', () => {
-  const L = n => JSON.parse(fs.readFileSync(`var/pattern-lab/v2/r/splits/${n}.json`,'utf8'));
+  const L = n => JSON.parse(fs.readFileSync(`${V2SPLITS}/${n}.json`,'utf8'));
   const tr = L('train'), va = L('validation'), te = L('test');
   const ids = [...tr, ...va, ...te].map(r=>r.id);
   assert.equal(new Set(ids).size, ids.length);
