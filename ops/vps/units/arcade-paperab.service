@@ -1,0 +1,20 @@
+[Unit]
+Description=Arcade 9-arm prospective A/B (requires provider keys + explicit approval)
+After=network-online.target arcade-live.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=APPROVE_LIVE_SPEND=1
+Environment=P12_ROUNDS=20
+Environment=MAX_MODEL_CALLS_PER_SESSION=330
+Environment=MAX_MODEL_CALLS_PER_ARM=110
+ExecStart=/usr/bin/node scripts/paper-ab.mjs
+Restart=no
+StandardOutput=append:/data/arcade/logs/paperab.log
+StandardError=append:/data/arcade/logs/paperab.log
+
+[Install]
+WantedBy=multi-user.target

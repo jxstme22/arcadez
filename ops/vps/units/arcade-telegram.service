@@ -1,0 +1,17 @@
+[Unit]
+Description=Arcade Telegram settlement reporter (event-driven poll loop)
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/data/arcade/app
+Environment=LIVE_DIR=/data/arcade/app/var/p12ab-live
+ExecStart=/bin/bash /data/arcade/app/ops/vps/telegram-loop.sh
+Restart=always
+RestartSec=30
+StandardOutput=append:/data/arcade/logs/telegram.log
+StandardError=append:/data/arcade/logs/telegram.log
+
+[Install]
+WantedBy=multi-user.target
