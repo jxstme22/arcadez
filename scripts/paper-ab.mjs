@@ -15,7 +15,8 @@ if (!MOCK && process.env.APPROVE_LIVE_SPEND !== '1') {
   console.error('BLOCKED_NEEDS_EXPLICIT_SPEND_APPROVAL: 0 provider calls made.');
   process.exit(2);
 }
-const TARGET = Math.min(300, Math.max(1, Number(process.env.P12_ROUNDS || 20)));
+const TARGET = Math.min(100000, Math.max(1, Number(process.env.P12_ROUNDS || 20)));
+const CONTINUOUS = process.env.PAPER_CONTINUOUS === '1'; // 24/7: ignore TARGET, run until stopped
 const MODES = ['A','B','C'];
 const ARMS9 = ARMS.flatMap(a => MODES.map(m => `${a}-${m}`));
 const cfg = {...config(),
@@ -65,7 +66,7 @@ collector.start();
 const valid = [];
 const attempted = new Set();
 const t0 = Date.now();
-while (valid.length < TARGET && Date.now() - t0 < (TARGET >= 100 ? 400 : 150)*60000) {
+while (CONTINUOUS || (valid.length < TARGET && Date.now() - t0 < (TARGET >= 100 ? 400 : 150)*60000)) {
   const now = Date.now();
   if (store.db.prepare('SELECT COUNT(*) n FROM decisions WHERE sent_ms IS NOT NULL').get().n >= cfg.maxCalls) { console.log('BUDGET_GUARD_STOP'); break; }
   const round = nextRound(collector.getRounds(), now);
