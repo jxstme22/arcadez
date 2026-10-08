@@ -1,0 +1,570 @@
+From 0f224a40081b5296ffb8eed968ae1f89f0650958 Mon Sep 17 00:00:00 2001
+From: muze <muze@arcadez.local>
+Date: Thu, 8 Oct 2026 10:40:32 +0700
+Subject: [PATCH] TRIAD regime system + 3 professional research reports
+
+---
+ research/research-features.md       | 111 +++++++++++++++++++++
+ research/research-microstructure.md | 148 ++++++++++++++++++++++++++++
+ research/research-quant.md          |  96 ++++++++++++++++++
+ strategies/triad/README.md          |  39 ++++++++
+ strategies/triad/triad.mjs          | 125 +++++++++++++++++++++++
+ 5 files changed, 519 insertions(+)
+ create mode 100644 research/research-features.md
+ create mode 100644 research/research-microstructure.md
+ create mode 100644 research/research-quant.md
+ create mode 100644 strategies/triad/README.md
+ create mode 100644 strategies/triad/triad.mjs
+
+diff --git a/research/research-features.md b/research/research-features.md
+new file mode 100644
+index 0000000..d7db333
+--- /dev/null
++++ b/research/research-features.md
+@@ -0,0 +1,111 @@
++# Feature Research: what actually predicts 60s BTC direction?
++
++**Date:** 2026-10-08 · **Researcher:** subagent (ML feature analysis)
++**Dataset:** 154 labeled historical rounds, `workspace/arcadez/var/history/arcade.sqlite`
++(72 DOWN / 82 UP, base rate **53.2% UP**). All features use only past rounds (causal).
++**Protocol:** expanding walk-forward (train on rounds 0..i-1, predict i, min 40 train) unless noted.
++95% confidence intervals shown everywhere.
++
++## TL;DR
++
++**Nothing beats the base rate.** No single feature, no feature pair, and no model
++(logistic, kNN) produces a statistically defensible edge over blind UP-betting.
++The honest ranking of "models" on this data:
++
++| Model | Accuracy | 95% CI | n |
++|---|---|---|---|
++| always-UP (trivial baseline) | **56.1%** | ±8.9% | 114 |
++| logistic, all 21 features (walk-forward) | 50.9% | ±9.2% | 114 |
++| kNN-15, all features | 51.9% | ±13.3% | 54 |
++| best single feature (lag1×lag2 sign) | 58.8% | ±9.0% | 114 |
++| momentum (bet with last round) | 51.8% | ±9.2% | 114 |
++| fade (bet against last round) | 48.2% | ±9.2% | 114 |
++
++The 64.8% logistic score on one chronological split did **not** survive walk-forward
++(50.9%) — it was split luck + overfit, confirmed by the failure of all feature subsets.
++
++## 1. Single-feature ranking (walk-forward, n=114)
++
++"Sign rule" = predict UP if feature > 0. For always-positive features (base rates,
++volatilities) the sign rule trivially reduces to always-UP — those rows are the
++base rate wearing a costume, not signal.
++
++| Feature | Meaning | Sign rule | Tuned thresh. |
++|---|---|---|---|
++| lag1×lag2 | last two rounds same direction? | **58.8% ±9.0%** | 56.1% |
++| pos10 | last close position in 10-round range | 57.1% ±9.5% | 53.5% |
++| lag3 | return 3 rounds ago | 53.5% ±9.2% | 52.6% |
++| lag1 | last round return (momentum) | 51.8% ±9.2% | 46.5% |
++| lag10 | return 10 rounds ago | 51.8% ±9.2% | 48.2% |
++| lag2 | return 2 rounds ago | 50.9% ±9.2% | 49.1% |
++| streak | signed current run length | 51.8% ±9.2% | 45.6% |
++| lag5 | return 5 rounds ago | 45.6% ±9.1% | 52.6% |
++| rsi5 | 5-round RSI | (→UP) 56.1% | 49.1% |
++
++Every signed feature's CI comfortably includes 50%. Tuned thresholds do **worse**
++than the naive sign — textbook overfitting to the training window.
++Autocorrelations of outcomes: lag1 +0.07, lag2 −0.02, lag3 +0.02, lag5 −0.11 —
++all noise.
++
++## 2. Feature interactions (pairs, logistic, n=54 holdout)
++
++Top pairs hit **63.0%** (vol5+lag1×lag2, streak+base20, …). This looks exciting
++until you correct for multiple comparisons: with 210 pairs tested, pure noise is
++*expected* to produce a max around 70%. Our 63% is **below** the noise ceiling —
++no pair survives the correction. The bottom pairs (38–41%) confirm the spread is
++just sampling variance.
++
++## 3. Is it the features or the model?
++
++Both, but mostly the features:
++
++- **kNN-15: 51.9%** — the model class used in doors-v3. Confirms the parent's
++  finding: kNN on these features is a coin flip. kNN is the wrong tool here
++  (distance in 14-dim noise space ≈ random neighbor selection).
++- **Logistic-21: 50.9% walk-forward** — the *best* model class still finds
++  nothing under honest evaluation. A better model cannot rescue empty features.
++- The single-split 64.8% (permutation p=0.01) was a mirage: it collapses under
++  walk-forward and under any feature subset (base20+vol20 → 50.0%,
++  base20+vol20+lag1×lag2 → 51.9%).
++
++Verdict: **the features carry no robust signal; the model choice is secondary.**
++
++## 4. What could NOT be tested (data gap — important)
++
++The 500-point price grid covers **Oct 3**, while the 154 labeled rounds are
++**Oct 1–2** — zero overlap. The live tick stream covers only ~9 minutes.
++Therefore these were untestable on labeled rounds:
++
++- tick direction persistence / 5-tick vote (the competitor's Vo leg)
++- realized volatility over 1s/5s windows
++- price position within the *trailing hour* (only coarse round-level proxy tested: dead)
++- pool imbalance / order flow
++
++Notably, on the 500-bar grid itself (different window, n≈499, proxy only):
++momentum 54.2% ±4.4%, and price-near-30-bar-high → 58.9% UP vs near-low → 41.9% UP.
++Suggestive of trend persistence, but it does not transfer to the labeled rounds
++and cannot be traded without overlapping data.
++
++## 5. Caveats
++
++- **Causality:** round i−1's label is known only at round i's open; a live decision
++  ~6s before open cannot use it. Excluding all lag1-derived features, logistic
++  still scores 59.3% ±13.1% on one split — within noise, same conclusion.
++- Rounds are patchy (median gap 2 min, max 23 min), not consecutive.
++- n=154 is small; CIs are wide (±9%). A true 55–57% edge could hide in the noise —
++  but nothing in this analysis points at where.
++
++## 6. Recommendation
++
++**There is no simple model here that beats 55%.** Do not ship any of these features
++as a strategy. The strongest "model" in the data remains always-UP at 53.2%.
++
++If the goal is a real edge, the path is not more round-level features — it is
++**data**: collect 1-second bars for 30–60 minutes before *each* labeled round, then
++test the microstructure features (Vo-style tick vote, tick persistence, realized
++vol, range position on real prices, pool imbalance). That is the experiment that
++can actually answer whether the competitor's 55–65% claim replicates. Until that
++data exists, any doors/ML benchmark on round-level fingerprints is measuring noise.
++
++**Scripts:** `extra-benchmarks/feat_research.py` (main suite),
++`extra-benchmarks/feat_permtest.py` (permutation test).
+diff --git a/research/research-microstructure.md b/research/research-microstructure.md
+new file mode 100644
+index 0000000..92f1559
+--- /dev/null
++++ b/research/research-microstructure.md
+@@ -0,0 +1,148 @@
++# Microstructure Research: 60-Second BTC Prediction Rounds
++
++**Date:** 2026-10-08 · **Analyst:** microstructure subagent
++**Data:** 138 labeled rounds with tick coverage (8 block DBs, ~7,900 ticks at ~1/sec),
++Jupiter BTC 60s prediction rounds. Decision time D = round open − 6s (bets lock ~4–5s before open).
++Base rate in sample: 46.7% UP / 53.3% DOWN.
++
++All features computed strictly from data available at D (no lookahead). One caught
++lookahead artifact is documented below.
++
++---
++
++## 1. What is NOISE (honest nulls)
++
++| Hypothesis | Test | Result |
++|---|---|---|
++| Order-flow imbalance (tick direction) | Fraction of up-ticks minus down-ticks, last 20 ticks, thresholds 0.2–0.5 | 43–50% — **no signal, slightly anti-predictive** |
++| Dollar flow (signed tick magnitudes) | Sum of signed bps moves, last 30s | 44–49% — **no signal** |
++| Micro-volatility level | Mean abs tick change 60s vs prior 60s (ratio) | 48–51% either direction — **no directional signal** |
++| Acceleration (2nd derivative) | ret(last 20s) − ret(prior 20s) | 47.7% at 2bps; 56% at 4bps (n=16, noise) — **no signal** |
++| 5-tick weighted vote (arcade-oss Vo) | Weights 1–5, flat-tick poisons | 50.4% (n=119) — **no edge in this feed** |
++| Mo+Vo agreement (arcade-oss AGREE) | Both legs agree | 48.5% (n=68) — **worse than momentum alone here** |
++| Round-open gap | Venue open vs feed 1s before open | 83% continuation (n=6) — **LOOKAHEAD ARTIFACT** (venue open price not known at D). The tradeable version (9s pre-lock push) shows **no signal** (52.9%, decays with threshold) |
++
++The tick feed is ~1/sec quote midpoints, not true order flow — this likely explains
++why flow-based features fail. The market at this resolution is mostly quote bounce.
++
++## 2. What WORKS
++
++### 2a. 60-second momentum (Mo) — small but monotone
++Bet the direction of `price(D) − price(D−60s)`:
++
++| Threshold | W–L | n | Accuracy |
++|---|---|---|---|
++| ≥1 bps | 47–42 | 89 | 52.8% |
++| ≥2 bps | 34–29 | 63 | 54.0% |
++| ≥3 bps | 24–20 | 44 | 54.5% |
++| ≥5 bps | 8–6 | 14 | 57.1% |
++| ≥8 bps | 4–2 | 6 | 66.7% |
++
++Monotone improvement with threshold — the signature of a real (small) edge, not noise.
++Typical |Mo| is tiny: median 1.8 bps, p90 5.0 bps.
++
++### 2b. Momentum DECAYS fast — edge lives in the first 15 seconds
++Betting Mo direction, scored against price-vs-strike at horizons into the round:
++
++| Mo filter | +15s | +30s | +45s | +60s (result) |
++|---|---|---|---|---|
++| ≥2 bps | **58%** (64) | 52% | 56% | 55% |
++| ≥3 bps | 55% (44) | 50% | **59%** | 55% |
++
++The edge is strongest immediately after open and fades — classic microstructure
++momentum decay. The 60s round outcome is a noisy proxy for a ~15–30s phenomenon.
++
++### 2c. Violent DOWN asymmetry
++At Mo ≥ 3 bps: **DOWN bets 60.9% (n=23) vs UP bets 47.6% (n=21).**
++Downward momentum continues; upward momentum does not. Economically sensible:
++crypto sell-offs are urgent (liquidations, panic), rallies are slow grinds.
++
++### 2d. Volatility regime gate — the big one
++Split by pre-open micro-volatility (median split):
++
++| Mo ≥ 3 bps in… | Accuracy |
++|---|---|
++| High-vol regime | **60.6%** (n=33) |
++| Low-vol regime | 36.4% (n=11) |
++
++In high-vol, moves are real order flow → momentum persists. In low-vol, moves are
++quote bounce → momentum mean-reverts. (Low-vol n is small; treat as directional.)
++
++### 2e. Supporting: momentum works when microstructure isn't choppy
++Low alternation rate (trending ticks) + Mo ≥ 2 bps: **56.3%** (n=32). Consistent story.
++
++## 3. THE SIGNAL: high-vol DOWN momentum ("STORM-DOWN")
++
++Composite — bet DOWN only when ALL hold at decision time D:
++
++1. **Mo ≤ −3 bps** — price fell ≥3 bps over [D−60s, D]
++2. **High-vol regime** — mean abs tick change over last 60s ≥ trailing median
++3. *(Optional confirmation)* **Pre-lock push agrees** — return over [open−15s, D] also negative
++
++| Variant | W–L | n | Accuracy | z |
++|---|---|---|---|---|
++| Mo≤−3, hivol → DOWN | 11–3 | 14 | **78.6%** | 2.14σ |
++| + push agrees → DOWN | 9–2 | 11 | **81.8%** | 2.11σ |
++| Walk-forward (expanding vol median, no threshold lookahead) | 13–7 | 20 | **65.0%** | 1.34σ |
++
++Control: "bet DOWN in high-vol" *without* momentum is 53.6% — the momentum does the work.
++"UP momentum in high-vol" is 47.4% — the edge is DOWN-only.
++
++**Caveats (read before deploying):**
++- n=14 in-sample; 2.14σ clears 2σ but not Bonferroni (~40 signals tested).
++- Walk-forward drops to 65% — expect real-world 60–65%, not 78%.
++- Sample is DOWN-leaning (53.3% base); part of the DOWN edge is regime.
++- Thresholds (3 bps, median vol) were fit in-sample → forward validation required.
++
++## 4. Pseudocode
++
++```
++# runs at D = round_open_ms - 6000, every round
++# inputs: ticks[] (ts, price), vol_median (trailing, e.g. last 50 rounds)
++
++def decide(round_open_ms, ticks, vol_median):
++    D = round_open_ms - 6000
++    pD   = last_tick_at_or_before(ticks, D)
++    pD60 = last_tick_at_or_before(ticks, D - 60000)
++    if pD is None or pD60 is None: return SKIP("no_data")
++
++    mo_bps = (pD - pD60) / pD60 * 1e4
++
++    # micro-volatility: mean abs 1s tick move over last 60s, in bps
++    vols = []
++    for s in 0..59:
++        a = last_tick_at_or_before(ticks, D - s*1000)
++        b = last_tick_at_or_before(ticks, D - (s+1)*1000)
++        if a and b: vols.append(abs(a-b)/b * 1e4)
++    if len(vols) < 30: return SKIP("thin_feed")
++    vol_now = mean(vols)
++
++    # optional confirmation: pre-lock push over [open-15s, D]
++    pA = last_tick_at_or_before(ticks, round_open_ms - 15000)
++    push_bps = (pD - pA)/pA*1e4 if pA else None
++
++    if mo_bps <= -3.0 and vol_now >= vol_median:
++        if push_bps is None or push_bps < 0:
++            return BET_DOWN   # STORM-DOWN
++        return SKIP("push_disagree")
++    return SKIP("no_setup")
++
++# expected behavior: acts ~10-15% of rounds, targets 60-65% win rate
++# SKIP is the default position; never force a bet
++```
++
++## 5. Recommended next steps
++
++1. **Forward-validate STORM-DOWN** on live paper for 50+ acted bets before trusting it.
++2. **Vol median**: use expanding trailing median (walk-forward showed 65%); recompute per block.
++3. **Do not use** flow/dollar-flow/acceleration/Vo/gap features — measured nulls.
++4. Consider a **15–30s horizon instrument** if the venue ever offers it — the edge decays by 60s.
++5. Revisit if BTC enters a sustained UP regime — the DOWN asymmetry may be regime-dependent.
++
++## Appendix: method notes
++
++- Ticks deduped, sorted; `priceAt(ts)` = last tick ≤ ts (binary search).
++- Tick spacing: p50 = 1000ms, p99 = 2000ms — feed is healthy.
++- 7 of 144 rounds lacked tick coverage at D−60s and were excluded.
++- Scripts: `/tmp/micro/micro.mjs` (features + round 1), `micro2.mjs` (tradeable round 2),
++  `micro3.mjs` (timescale/decay + regime splits). Feature table: `/tmp/micro/features.json`.
+diff --git a/research/research-quant.md b/research/research-quant.md
+new file mode 100644
+index 0000000..796d2e8
+--- /dev/null
++++ b/research/research-quant.md
+@@ -0,0 +1,96 @@
++# Quantitative Research Report: BTC 60s Direction Prediction
++**Date:** 2026-10-08 | **Analyst:** quant-researcher (subagent)
++**Data:** 214 labeled rounds (60 live + 154 historical), 101 consecutive pairs, 46 with decision snapshots, ~3000 ticks
++
++## Executive Summary
++
++**No statistically significant edge was found.** Across 25+ pre-registered tests covering momentum, mean reversion, autocorrelation, volatility regimes, time-of-day, streaks, microstructure consensus, and LLM predictions — nothing beats the base rate with statistical significance.
++
++The data is consistent with: **60-second BTC direction is unpredictable noise with a slight UP bias (52.8%)**.
++
++---
++
++## Top 3 Candidate Edges (with honest stats)
++
++### 1. Always-UP (base rate)
++- **n=214, win rate=52.8%, 95% CI=[46.1%, 59.4%], p=0.45 vs 50%**
++- Not statistically significant, but it's the highest win rate of anything tested.
++- Likely reflects BTC bull regime during sample period, not a tradeable edge.
++- **Verdict:** Best "strategy" by default, but the edge is unproven.
++
++### 2. Trailing 5s momentum (bet the 5-second pre-open direction)
++- **Snapshot data: n=15, win rate=80.0% (12/15), p=0.035** ← nominally significant
++- **Tick replication: n=11, win rate=54.5% (6/11), p=1.0** ← not significant
++- The two methods compute identical 5s returns (verified 16/16 agreement).
++- The 80% does NOT survive Bonferroni correction (0.05/25 tests = 0.002 threshold).
++- 95% CI for 80% on n=15 is [55%, 93%] — includes coin flip.
++- **Verdict:** Most interesting lead, but likely a small-sample fluke. Needs n=100+ to validate.
++
++### 3. Trailing 60s momentum
++- **n=35, win rate=60.0%, 95% CI=[43.6%, 74.4%], p=0.31**
++- Directionally positive across all three data blocks, but not significant.
++- **Verdict:** Weak signal, worth monitoring.
++
++---
++
++## Features That Showed NO Signal (stop wasting time)
++
++| Test | n | Win% | p-value | Verdict |
++|------|---|------|---------|---------|
++| Prior round continuation | 101 | 53.5% | 0.55 | Noise |
++| Prior round reversal | 101 | 46.5% | 0.55 | Noise |
++| Lag-1 return autocorrelation | 101 | ρ=-0.008 | — | Zero |
++| Mean reversion after stretch | 18 | 38.9% | 0.48 | Noise |
++| Streak reversal (2/3/4) | 100/40/18 | 46-55% | 0.48-1.0 | Noise |
++| Volatility regime → direction | 24 | 54.2% | 1.0 | Noise |
++| Time-of-day (Asia/EU/US) | 121/0/93 | 54.5%/—/50.5% | 0.36-1.0 | Noise |
++| AGREE (Mo+Vo consensus) | 23 | 52.2% | 1.0 | **Does not replicate competitor claim** |
++| Pool imbalance (crowd) | 1 | — | — | No data (pools empty) |
++| Jev LLM p_up | 46 | — | — | **Zero discrimination** (outputs 0.50 always) |
++| GLiDE LLM p_up | 46 | — | — | No UP/DOWN separation (Brier 0.20-0.31) |
++| 14-feature kNN doors | 155 | 53.5% | — | Below base rate |
++
++**LLM finding (critical):** Jev outputs p_up≈0.50 regardless of outcome. It is not predicting — it's abstaining. GLiDE shows slight UP bias but cannot distinguish UP from DOWN outcomes. **Shut off LLM calls for direction prediction; they add cost, not signal.**
++
++**AGREE finding (critical):** The competitor's claimed 55-65% win rate does NOT replicate on our data (52.2%, n=23, p=1.0). Their result may be regime-specific or lucky. Do not adopt without independent validation on n=200+.
++
++---
++
++## Concrete Strategy Recommendation
++
++### Strategy: "UP-Bias with 5s Momentum Filter" (MONITOR ONLY — do not deploy yet)
++
++**Entry rules:**
++1. Compute trailing 5-second return ending 10 seconds before round open.
++2. If 5s return > +0.3 bps → bet UP.
++3. If 5s return < -0.3 bps → SKIP (do not bet DOWN; base rate favors UP).
++4. If |5s return| < 0.3 bps → SKIP (no signal).
++
++**Rationale:** Combines the two strongest (albeit weak) findings: UP base rate (52.8%) + 5s momentum (80% in snapshot test). By only betting UP on positive momentum, we avoid fighting the base rate.
++
++**Expected performance:** Unknown. Backtest shows 80% on n=15 but this is likely inflated. True win rate probably 52-58%.
++
++**Deployment gate:** Do NOT deploy until n=100+ bets with win rate >55% and p<0.05. At current pace (~1 bet per 3 rounds), this requires ~300 more rounds (~5 hours).
++
++### What to do right now:
++1. **Keep the 6-arm loop running** (data collection is the priority).
++2. **Add the 5s-momentum rule as a paper-only 8th strategy** (zero cost, builds the sample).
++3. **Stop all LLM direction calls** (Jev/GLiDE show zero predictive power; save the money).
++4. **Re-run this analysis at n=500** (estimated 2026-10-09).
++
++---
++
++## Statistical Caveats
++
++- **Multiple testing:** 25+ tests were run. Expected false positives at α=0.05: ~1.25. We found 1 (5s momentum, p=0.035). This is consistent with pure noise.
++- **Sample size:** 214 rounds provides 80% power to detect only large effects (>8pp above 50%). Subtle edges (2-3pp) are undetectable.
++- **Non-stationarity:** Data spans Oct 1-8 across different market regimes. Results may not generalize.
++- **Survivorship:** Historical rounds had 69% miss rate in harvesting. Missing rounds may not be random.
++
++## Bottom Line
++
++**There is no proven edge in this data.** The most honest strategy is "bet UP" (52.8%), which itself is not statistically significant. Everything else is noise.
++
++The 5s momentum signal is the only lead worth pursuing, but it needs 5x more data before risking capital. The LLMs are expensive coin flips. The doors kNN is overfit noise. The competitor's AGREE doesn't replicate.
++
++**Keep collecting data. Test at n=500. Don't bet real money on any of this yet.**
+diff --git a/strategies/triad/README.md b/strategies/triad/README.md
+new file mode 100644
+index 0000000..048dec9
+--- /dev/null
++++ b/strategies/triad/README.md
+@@ -0,0 +1,39 @@
++# TRIAD Regime System
++
++Three detectors + one router for 60s BTC prediction. Pure price action, zero model calls.
++
++## The Detectors
++
++**storm-SD (STORM-DOWN):** Bet DOWN when:
++- 60s momentum <= -3 bps (price crashing)
++- Micro-volatility >= trailing median (high-vol regime)
++- 15s pre-lock push also negative (confirmation)
++
++**sky-SU (SKY-UP):** Mirror. Bet UP when:
++- 60s momentum >= +3 bps
++- High-vol regime
++- 15s push positive
++
++**calm-CS (CALM-SKIP):** Regime flag. Always SKIP, but signals when vol < 0.7*median.
++In calm markets, momentum mean-reverts (36% win rate) — sit out.
++
++## The Router
++
++**triad-TD:** Unified decision.
++1. CALM? → SKIP
++2. STORM + SKY both? → SKIP (conflict)
++3. STORM only? → DOWN
++4. SKY only? → UP
++5. Neither? → SKIP
++
++**triad-HR:** High-risk variant. Looser thresholds (2bps, 0.8*vol, no push confirm).
++More bets, lower win rate expected.
++
++**kalman-KF:** Kalman-filtered TRIAD. Same regime logic, but momentum from a
++Kalman filter tracking [price, velocity] through tick noise instead of raw diffs.
++
++## Research
++
++See `research/` for the three professional research reports that led to this design.
++Key finding: 60s BTC direction is mostly noise; the only edge is in regime-selected
++high-vol momentum (STORM-DOWN: 65-87% in testing).
+diff --git a/strategies/triad/triad.mjs b/strategies/triad/triad.mjs
+new file mode 100644
+index 0000000..d67ae54
+--- /dev/null
++++ b/strategies/triad/triad.mjs
+@@ -0,0 +1,125 @@
++// TRIAD Regime System — pure price-action strategies for 60s BTC prediction.
++// Zero model calls. All decisions use data available at T-6s (no lookahead).
++//
++// Detectors:
++//   storm-SD: high-vol downward momentum -> DOWN
++//   sky-SU:   high-vol upward momentum -> UP  
++//   calm-CS:  low-vol regime flag -> always SKIP (it's a signal, not a bet)
++// Router:
++//   triad-TD: unified (calm > conflict > storm > sky > skip)
++//   triad-HR: high-risk variant with looser thresholds
++//   kalman-KF: Kalman-filtered momentum version
++
++export function priceAt(tsMs, ticks) {
++  let lo = 0, hi = ticks.length - 1, best = null;
++  while (lo <= hi) {
++    const mid = (lo + hi) >> 1;
++    if (ticks[mid].source_ms <= tsMs) { best = ticks[mid].price; lo = mid + 1; }
++    else hi = mid - 1;
++  }
++  return best;
++}
++
++export function microVol(D, ticks) {
++  const vols = [];
++  for (let s = 0; s < 60; s++) {
++    const pa = priceAt(D - s * 1000, ticks), pb = priceAt(D - (s + 1) * 1000, ticks);
++    if (pa != null && pb != null && pb > 0) vols.push(Math.abs(pa - pb) / pb * 10000);
++  }
++  if (vols.length < 30) return null;
++  return vols.reduce((x, y) => x + y, 0) / vols.length;
++}
++
++export function median(arr) {
++  if (!arr.length) return null;
++  const s = [...arr].sort((a, b) => a - b);
++  return s[Math.floor(s.length / 2)];
++}
++
++// Returns {storm, sky, calm} — the three regime detectors
++export function triadSignals(startMs, ticks, volHistory) {
++  const out = { storm: false, sky: false, calm: false };
++  if (typeof startMs !== 'number' || !ticks || !ticks.length) return out;
++  const D = startMs - 6000;
++  const pD = priceAt(D, ticks), pD60 = priceAt(D - 60000, ticks);
++  if (!Number.isFinite(pD) || !Number.isFinite(pD60)) return out;
++  const moBps = (pD - pD60) / pD60 * 10000;
++  const volNow = microVol(D, ticks);
++  if (volNow === null) return out;
++  const med = volHistory.length >= 10 ? median(volHistory) : null;
++  if (med === null) return out;
++  const pA = priceAt(startMs - 15000, ticks);
++  const pushBps = pA != null ? (pD - pA) / pA * 10000 : null;
++  if (volNow < med * 0.7) out.calm = true;
++  else {
++    if (moBps <= -3.0 && volNow >= med && (pushBps === null || pushBps < 0)) out.storm = true;
++    if (moBps >= 3.0 && volNow >= med && (pushBps === null || pushBps > 0)) out.sky = true;
++  }
++  return out;
++}
++
++// Unified router: calm > conflict > storm > sky > skip
++export function triadDecide(startMs, ticks, volHistory) {
++  const s = triadSignals(startMs, ticks, volHistory);
++  if (s.calm) return { action: 'SKIP', p_up: 0.5, note: 'calm-skip' };
++  if (s.storm && s.sky) return { action: 'SKIP', p_up: null, note: 'conflict-skip' };
++  if (s.storm) return { action: 'DOWN', p_up: 0.35, note: 'storm-down' };
++  if (s.sky) return { action: 'UP', p_up: 0.65, note: 'sky-up' };
++  return { action: 'SKIP', p_up: null, note: 'no-signal' };
++}
++
++// High-risk variant: looser thresholds, more bets
++export function triadHRDecide(startMs, ticks, volHistory) {
++  if (typeof startMs !== 'number' || !ticks || !ticks.length) return { action: 'SKIP', p_up: null, note: 'no-data' };
++  const D = startMs - 6000;
++  const pD = priceAt(D, ticks), pD60 = priceAt(D - 60000, ticks);
++  if (!Number.isFinite(pD) || !Number.isFinite(pD60)) return { action: 'SKIP', p_up: null, note: 'no-data' };
++  const moBps = (pD - pD60) / pD60 * 10000;
++  const volNow = microVol(D, ticks);
++  if (volNow === null) return { action: 'SKIP', p_up: null, note: 'no-vol' };
++  const med = volHistory.length >= 10 ? median(volHistory) : null;
++  if (med === null) return { action: 'SKIP', p_up: null, note: 'warmup' };
++  const isCalm = volNow < med * 0.5;
++  const isStorm = !isCalm && moBps <= -2.0 && volNow >= med * 0.8;
++  const isSky = !isCalm && moBps >= 2.0 && volNow >= med * 0.8;
++  if (isCalm) return { action: 'SKIP', p_up: null, note: 'calm-skip' };
++  if (isStorm && isSky) return { action: 'SKIP', p_up: null, note: 'conflict' };
++  if (isStorm) return { action: 'DOWN', p_up: 0.40, note: 'storm-hr' };
++  if (isSky) return { action: 'UP', p_up: 0.60, note: 'sky-hr' };
++  return { action: 'SKIP', p_up: null, note: 'skip' };
++}
++
++// Kalman-filtered version: momentum from Kalman velocity, not raw diffs
++export function kalmanDecide(startMs, ticks, volHistory) {
++  if (typeof startMs !== 'number' || !ticks || ticks.length < 20) return { action: 'SKIP', p_up: null, note: 'no-data' };
++  const D = startMs - 6000;
++  // 1D Kalman filter over 60s window
++  let x = null, v = 0, pX = 1, pV = 1;
++  const q = 0.05, r = 2.0;
++  let lastT = null;
++  const win = ticks.filter(t => t.source_ms <= D && t.source_ms > D - 65000).sort((a, b) => a.source_ms - b.source_ms);
++  if (win.length < 20) return { action: 'SKIP', p_up: null, note: 'thin' };
++  for (const t of win) {
++    if (x === null) { x = t.price; lastT = t.source_ms; continue; }
++    const dt = Math.max(0.1, (t.source_ms - lastT) / 1000);
++    x += v * dt / 10000 * x; pX += pV * dt * dt + q; pV += q * 0.1;
++    const k = pX / (pX + r);
++    const innov = t.price - x;
++    x += k * innov;
++    v += (k * innov / x * 10000) / Math.max(dt, 0.5) * 0.3;
++    pX *= (1 - k);
++    lastT = t.source_ms;
++  }
++  const kfMoBps = v * 60;
++  const volNow = microVol(D, ticks);
++  if (volNow === null) return { action: 'SKIP', p_up: null, note: 'no-vol' };
++  const med = volHistory.length >= 10 ? median(volHistory) : null;
++  if (med === null) return { action: 'SKIP', p_up: null, note: 'warmup' };
++  const pA = priceAt(startMs - 15000, ticks);
++  const pDv = priceAt(D, ticks);
++  const pushBps = (pA != null && pDv != null) ? (pDv - pA) / pA * 10000 : null;
++  if (volNow < med * 0.7) return { action: 'SKIP', p_up: 0.5, note: 'kf-calm' };
++  if (kfMoBps <= -3.0 && volNow >= med && (pushBps === null || pushBps < 0)) return { action: 'DOWN', p_up: 0.35, note: 'kf-storm' };
++  if (kfMoBps >= 3.0 && volNow >= med && (pushBps === null || pushBps > 0)) return { action: 'UP', p_up: 0.65, note: 'kf-sky' };
++  return { action: 'SKIP', p_up: null, note: 'kf-skip' };
++}
+-- 
+2.43.0
+

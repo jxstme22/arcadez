@@ -18,7 +18,8 @@ for (const r of rows) {
   if (r.action !== 'SKIP') { by[r.arm].a++; if (r.correct === 1) by[r.arm].w++; if (r.correct === 0) by[r.arm].l++; }
 }
 s.close();
-let msg = `*ArcadeZ paper* — ${ids.length} settled (${nUp} UP/${ids.length - nUp} DOWN)\n\`\`\`\n`;
+const tag = process.env.REPORT_TAG || 'models';
+let msg = `*ArcadeZ paper [${tag}]* — ${ids.length} settled (${nUp} UP/${ids.length - nUp} DOWN)\n\`\`\`\n`;
 msg += `arm        acted  W-L    win%\n`;
 for (const a of Object.keys(by).sort()) {
   const v = by[a];
